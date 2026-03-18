@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 300px;
+      padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 13px;
+    }
+    h1 {
+      font-size: 14px;
+      margin: 0 0 12px;
+    }
+    .toggle-section {
+      margin-bottom: 16px;
+    }
+    .toggle-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .toggle-item:last-child {
+      border-bottom: none;
+    }
+    .toggle-label {
+      font-weight: 500;
+    }
+    .toggle-switch {
+      position: relative;
+      width: 44px;
+      height: 24px;
+    }
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .toggle-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.3s;
+      border-radius: 24px;
+    }
+    .toggle-slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: 0.3s;
+      border-radius: 50%;
+    }
+    input:checked + .toggle-slider {
+      background-color: #0066cc;
+    }
+    input:checked + .toggle-slider:before {
+      transform: translateX(20px);
+    }
+    .info {
+      background: #f0f7ff;
+      border: 1px solid #cce0ff;
+      border-radius: 4px;
+      padding: 10px;
+      font-size: 11px;
+      color: #333;
+      line-height: 1.6;
+    }
+    .info strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #0066cc;
+    }
+  </style>
+</head>
+<body>
+  <h1>不動産 適正価格チェッカー</h1>
+  
+  <div class="toggle-section">
+    <div class="toggle-item">
+      <span class="toggle-label">SUUMO</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="suumoToggle" checked>
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+    <div class="toggle-item">
+      <span class="toggle-label">Yahoo!不動産</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="yahooToggle" checked>
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <div class="info">
+    <strong>計算方法</strong>
+    同じ駅・同じ築年数帯（1-10年, 11-20年など）の過去取引データから平均坪単価を計算し、その物件の面積に適用して適正価格を算出します。
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

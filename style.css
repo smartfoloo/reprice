@@ -1,0 +1,57 @@
+/* SUUMO Price Checker Styles */
+.suumo-price-checker {
+  background: #f8f9fa !important;
+  border-top: 2px solid #0066cc !important;
+  padding: 8px 0 !important;
+}
+
+.suumo-price-checker dt {
+  color: #0066cc !important;
+  font-weight: bold !important;
+}
+
+.price-checker-result {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.price-checker-result.expensive {
+  background: #ffe0e0;
+  color: #c00;
+}
+
+.price-checker-result.cheap {
+  background: #e0ffe0;
+  color: #060;
+}
+
+.price-checker-result.fair {
+  background: #e0e0ff;
+  color: #006;
+}
+
+.price-checker-result.nodata {
+  background: #f0f0f0;
+  color: #666;
+}
+
+.price-checker-diff {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.price-checker-label {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.price-checker-detail {
+  display: block;
+  font-size: 11px;
+  color: #666;
+  margin-top: 4px;
+}

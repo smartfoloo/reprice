@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "不動産 適正価格チェッカー",
+  "version": "1.1",
+  "description": "SUUMOとYahoo!不動産の物件ページで適正価格との比較を表示します",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["*://suumo.jp/*", "*://*.suumo.jp/*"],
+      "js": ["content.js"],
+      "css": ["style.css"]
+    },
+    {
+      "matches": ["*://realestate.yahoo.co.jp/*"],
+      "js": ["content-yahoo.js"],
+      "css": ["style.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["data.csv"],
+      "matches": ["*://suumo.jp/*", "*://*.suumo.jp/*", "*://realestate.yahoo.co.jp/*"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.jpg",
+      "48": "icon48.jpg",
+      "128": "icon128.jpg"
+    }
+  },
+  "icons": {
+    "16": "icon16.jpg",
+    "48": "icon48.jpg",
+    "128": "icon128.jpg"
+  }
+}
