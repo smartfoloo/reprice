@@ -7,18 +7,21 @@
   "content_scripts": [
     {
       "matches": ["*://suumo.jp/*", "*://*.suumo.jp/*"],
-      "js": ["content.js"],
+      "js": ["content.js", "csv-loader.js"],
       "css": ["style.css"]
     },
     {
       "matches": ["*://realestate.yahoo.co.jp/*"],
-      "js": ["content-yahoo.js"],
+      "js": ["content.js", "csv-loader.js"],
       "css": ["style.css"]
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["data.csv"],
+      "resources": [
+        "data/*.csv",
+        "data/*.csv.gz"
+      ],
       "matches": ["*://suumo.jp/*", "*://*.suumo.jp/*", "*://realestate.yahoo.co.jp/*"]
     }
   ],

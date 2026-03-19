@@ -22,67 +22,14 @@ var COL = {
 };
 
 function loadCSV(callback) {
-  var url = chrome.runtime.getURL('data.csv');
-  console.log('SUUMO Price Checker: Loading CSV from', url);
+  var prefecture = detectPrefecture();
+  console.log('[SUUMO] Detected prefecture:', prefecture);
 
-  fetch(url)
-    .then(function (response) {
-      console.log('SUUMO Price Checker: Fetch response status:', response.status);
-      if (!response.ok) {
-        throw new Error('HTTP error ' + response.status);
-      }
-      return response.arrayBuffer();
-    })
-    .then(function (buffer) {
-      var decoder = new TextDecoder('shift-jis');
-      var text = decoder.decode(buffer);
-      console.log('SUUMO Price Checker: CSV text length:', text.length);
-      console.log('SUUMO Price Checker: First 500 chars:', text.substring(0, 500));
-      csvData = parseCSV(text);
-      console.log('SUUMO Price Checker: CSVデータ読み込み完了 (' + csvData.length + '件)');
-      if (csvData.length > 0) {
-        console.log('SUUMO Price Checker: Sample row:', csvData[0]);
-      }
-      callback();
-    })
-    .catch(function (err) {
-      console.error('SUUMO Price Checker: CSVの読み込みに失敗しました', err);
-      console.error('SUUMO Price Checker: Error details:', err.message);
-      callback();
-    });
-}
-
-function parseCSV(text) {
-  var lines = text.split('\n');
-  var result = [];
-
-  for (var i = 1; i < lines.length; i++) {
-    var line = lines[i].trim();
-    if (!line) continue;
-
-    var row = [];
-    var inQuote = false;
-    var field = '';
-
-    for (var j = 0; j < line.length; j++) {
-      var c = line[j];
-      if (c === '"') {
-        inQuote = !inQuote;
-      } else if (c === ',' && !inQuote) {
-        row.push(field.trim());
-        field = '';
-      } else {
-        field += c;
-      }
-    }
-    row.push(field.trim());
-
-    if (row[COL.TYPE] && row[COL.TYPE].indexOf('中古マンション') !== -1) {
-      result.push(row);
-    }
-  }
-
-  return result;
+  loadPrefectureCSV(prefecture, COL, function (data) {
+    csvData = data;
+    console.log('[SUUMO] CSV loaded:', csvData.length, 'records');
+    callback();
+  });
 }
 
 function parseBuildYear(text) {
@@ -368,12 +315,12 @@ function processProperties() {
   var units = document.querySelectorAll('.property_unit');
   var processed = 0;
 
-  console.log('SUUMO Price Checker: Found', units.length, 'property units');
+  console.log('[v0] SUUMO Price Checker: Found', units.length, 'property units');
 
   units.forEach(function (unit, index) {
     var data = extractPropertyData(unit);
 
-    console.log('SUUMO Property #' + (index + 1) + ':', {
+    console.log('[v0] SUUMO Property #' + (index + 1) + ':', {
       station: data.station,
       price: data.price,
       area: data.area,
@@ -384,7 +331,7 @@ function processProperties() {
     });
 
     if (!data.price || !data.area) {
-      console.log('Skipping property #' + (index + 1) + ': missing price or area');
+      console.log('[v0] Skipping property #' + (index + 1) + ': missing price or area');
       return;
     }
 
@@ -400,11 +347,11 @@ function processProperties() {
 
     var matches = findMatchingProperties(data.station, data.ageRange);
 
-    console.log('=== ' + data.station + '駅 築' + data.ageRange + '年 マッチング結果 ===');
-    console.log('マッチ件数: ' + matches.length + '件');
+    console.log('[v0] === ' + data.station + '駅 築' + data.ageRange + '年 マッチング結果 ===');
+    console.log('[v0] マッチ件数: ' + matches.length + '件');
     if (matches.length > 0) {
       matches.forEach(function (m, idx) {
-        console.log('  #' + (idx + 1) + ': ' + m.station + ' 築' + m.buildYear + '年 ' +
+        console.log('[v0]   #' + (idx + 1) + ': ' + m.station + ' 築' + m.buildYear + '年 ' +
           (m.area).toFixed(1) + '㎡ ' + yen(m.price) + ' (坪単価: ' + yen(m.tsuboPrice) + ', 徒歩' + m.walkTime + '分)');
       });
     }
@@ -415,7 +362,7 @@ function processProperties() {
     }
 
     var avgTsuboPrice = calculateAverageTsuboPrice(matches);
-    console.log('平均坪単価: ' + yen(avgTsuboPrice));
+    console.log('[v0] 平均坪単価: ' + yen(avgTsuboPrice));
 
     var tsuboArea = data.area / TSUBO;
     var reasonablePrice = avgTsuboPrice * tsuboArea;
