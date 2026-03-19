@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "不動産 適正価格チェッカー",
+  "name": "Reprice",
   "version": "1.1",
-  "description": "SUUMOとYahoo!不動産の物件ページで適正価格との比較を表示します",
+  "description": "Repriceは、大手不動産ポータルサイトで中古マンションの適正価格を表示することができるChrome拡張機能です。",
   "permissions": ["storage"],
   "content_scripts": [
     {
