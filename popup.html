@@ -2,6 +2,15 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-07DGZCBFB3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-07DGZCBFB3');
+  </script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=LINE+Seed+JP&display=swap');
 
@@ -14,6 +23,10 @@
     h1 {
       font-size: 14px;
       margin: 0 0 12px;
+      font-weight: 600;
+    }
+    p {
+      line-height: 1.5;
     }
     .toggle-section {
       margin-bottom: 16px;
@@ -86,8 +99,8 @@
   </style>
 </head>
 <body>
-  <h1>不動産 適正価格チェッカー</h1>
-  
+  <h1>Reprice</h1>
+  <p>Repriceは、大手不動産ポータルサイトで中古マンションの適正価格を表示することができるChrome拡張機能です。</p>
   <div class="toggle-section">
     <div class="toggle-item">
       <span class="toggle-label">SUUMO</span>
