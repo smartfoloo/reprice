@@ -10,6 +10,19 @@
   font-weight: bold !important;
 }
 
+/* Yahoo Price Checker Styles */
+.yahoo-price-checker {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 2px solid #0066cc;
+}
+
+/* Athome Price Checker Styles */
+.athome-price-checker {
+  font-family: sans-serif;
+}
+
+/* Common Price Checker Result Styles */
 .price-checker-result {
   display: inline-block;
   padding: 4px 10px;

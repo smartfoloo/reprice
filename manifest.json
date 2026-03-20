@@ -3,17 +3,47 @@
   "name": "Reprice",
   "version": "1.1",
   "description": "Repriceは、大手不動産ポータルサイトで中古マンションの適正価格を表示することができるChrome拡張機能です。",
-  "permissions": ["storage"],
+  "permissions": [
+    "storage"
+  ],
   "content_scripts": [
     {
-      "matches": ["*://suumo.jp/*", "*://*.suumo.jp/*"],
-      "js": ["content.js", "csv-loader.js"],
-      "css": ["style.css"]
+      "matches": [
+        "*://suumo.jp/*",
+        "*://*.suumo.jp/*"
+      ],
+      "js": [
+        "content.js",
+        "csv-loader.js"
+      ],
+      "css": [
+        "style.css"
+      ]
     },
     {
-      "matches": ["*://realestate.yahoo.co.jp/*"],
-      "js": ["content.js", "csv-loader.js"],
-      "css": ["style.css"]
+      "matches": [
+        "*://realestate.yahoo.co.jp/*"
+      ],
+      "js": [
+        "content-yahoo.js",
+        "csv-loader.js"
+      ],
+      "css": [
+        "style.css"
+      ]
+    },
+    {
+      "matches": [
+        "*://athome.co.jp/*",
+        "*://*.athome.co.jp/*"
+      ],
+      "js": [
+        "content-athome.js",
+        "csv-loader.js"
+      ],
+      "css": [
+        "style.css"
+      ]
     }
   ],
   "web_accessible_resources": [
@@ -22,7 +52,13 @@
         "data/*.csv",
         "data/*.csv.gz"
       ],
-      "matches": ["*://suumo.jp/*", "*://*.suumo.jp/*", "*://realestate.yahoo.co.jp/*"]
+      "matches": [
+        "*://suumo.jp/*",
+        "*://*.suumo.jp/*",
+        "*://realestate.yahoo.co.jp/*",
+        "*://athome.co.jp/*",
+        "*://*.athome.co.jp/*"
+      ]
     }
   ],
   "action": {
