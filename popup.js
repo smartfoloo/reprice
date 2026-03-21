@@ -76,15 +76,27 @@ document.addEventListener('DOMContentLoaded', function () {
     chrome.storage.sync.set({ houseEnabled: houseToggle.checked });
   });
 
-  suumoToggle.addEventListener('change', function () {
+  suumoToggle.addEventListener('change', async function () {
+    await sendGAEvent("suumo_toggle", {
+      trigger: "suumo_toggle",
+      enabled: suumoToggle.checked,
+    });
     chrome.storage.sync.set({ suumoEnabled: suumoToggle.checked });
   });
 
-  yahooToggle.addEventListener('change', function () {
+  yahooToggle.addEventListener('change', async function () {
+    await sendGAEvent("yahoo_toggle", {
+      trigger: "yahoo_toggle",
+      enabled: yahooToggle.checked,
+    });
     chrome.storage.sync.set({ yahooEnabled: yahooToggle.checked });
   });
 
-  athomeToggle.addEventListener('change', function () {
+  athomeToggle.addEventListener('change', async function () {
+    await sendGAEvent("athome_toggle", {
+      trigger: "athome_toggle",
+      enabled: athomeToggle.checked,
+    });
     chrome.storage.sync.set({ athomeEnabled: athomeToggle.checked });
   });
 });
