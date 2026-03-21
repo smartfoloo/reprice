@@ -4,6 +4,39 @@ var NOW = new Date().getFullYear();
 var csvDataApartment = [];
 var csvDataHouse = [];
 
+var COL_APARTMENT = {
+  TYPE: 0,
+  STATION: 6,
+  WALK_TIME: 7,
+  PRICE: 8,
+  LAYOUT: 9,
+  AREA: 10,
+  BUILD_YEAR: 11,
+  STRUCTURE: 12,
+  TRADE_PERIOD: 18
+};
+
+var COL_HOUSE = {
+  TYPE: 0,
+  STATION: 7,
+  WALK_TIME: 8,
+  PRICE: 9,
+  LAYOUT: 11,
+  AREA: 10,
+  BUILD_YEAR: 14,
+  STRUCTURE: 15,
+  TRADE_PERIOD: 24
+};
+
+function detectPrefecture() {
+  var PREFECTURE_MAP = { '東京': 'tokyo', '北海道': 'hokkaido', '大阪': 'osaka' };
+  var url = window.location.href.toLowerCase();
+  for (var key in PREFECTURE_MAP) {
+    if (url.indexOf(key.toLowerCase()) !== -1) return PREFECTURE_MAP[key];
+  }
+  return 'tokyo';
+}
+
 function detectPropertyType() {
   var url = window.location.href;
   if (url.indexOf('/kodate/chuko/') !== -1) return 'house';
@@ -21,37 +54,24 @@ function checkEnabled(callback) {
   });
 }
 
-var COL = {
-  TYPE: 0,
-  STATION: 6,
-  WALK_TIME: 7,
-  PRICE: 8,
-  LAYOUT: 9,
-  AREA: 10,
-  BUILD_YEAR: 11,
-  STRUCTURE: 12,
-  TRADE_PERIOD: 18
-};
-
 function loadCSV(callback) {
   var prefecture = detectPrefecture();
   console.log('[Athome] Detected prefecture:', prefecture);
 
-  var apartmentLoaded = false;
-  var houseLoaded = false;
+  if (typeof loadPrefectureCSV === 'undefined') {
+    console.log('[Athome] CSV loader not found');
+    callback();
+    return;
+  }
 
-  chrome.storage.sync.get({
-    apartmentEnabled: true,
-    houseEnabled: true
-  }, function (data) {
+  chrome.storage.sync.get({ apartmentEnabled: true, houseEnabled: true }, function (data) {
     var pendingLoads = 0;
 
     if (data.apartmentEnabled) {
       pendingLoads++;
-      loadPrefectureCSV(prefecture, COL, 'apartment', function (data) {
-        csvDataApartment = data;
-        console.log('[Athome] Apartment CSV loaded:', csvDataApartment.length, 'records');
-        apartmentLoaded = true;
+      loadPrefectureCSV(prefecture, COL_APARTMENT, 'apartment', function (csv) {
+        csvDataApartment = csv;
+        console.log('[Athome] Apartment CSV:', csvDataApartment.length);
         pendingLoads--;
         if (pendingLoads === 0) callback();
       });
@@ -59,10 +79,9 @@ function loadCSV(callback) {
 
     if (data.houseEnabled) {
       pendingLoads++;
-      loadPrefectureCSV(prefecture, COL, 'house', function (data) {
-        csvDataHouse = data;
-        console.log('[Athome] House CSV loaded:', csvDataHouse.length, 'records');
-        houseLoaded = true;
+      loadPrefectureCSV(prefecture, COL_HOUSE, 'house', function (csv) {
+        csvDataHouse = csv;
+        console.log('[Athome] House CSV:', csvDataHouse.length);
         pendingLoads--;
         if (pendingLoads === 0) callback();
       });
@@ -76,9 +95,6 @@ function parseBuildYear(text) {
   if (!text) return null;
   var match = text.match(/(\d{4})年/);
   if (match) return parseInt(match[1]);
-  if (text.indexOf('令和') !== -1) return 2018 + parseInt(text.replace(/[^0-9]/g, ''));
-  if (text.indexOf('平成') !== -1) return 1988 + parseInt(text.replace(/[^0-9]/g, ''));
-  if (text.indexOf('昭和') !== -1) return 1925 + parseInt(text.replace(/[^0-9]/g, ''));
   return null;
 }
 
@@ -93,14 +109,10 @@ function getAgeRange(age) {
 
 function normalizeStation(name) {
   if (!name) return '';
-  return name
-    .replace(/\(.*?\)/g, '')
-    .replace(/（.*?）/g, '')
-    .replace(/駅$/, '')
-    .trim();
+  return name.replace(/\(.*?\)/g, '').replace(/（.*?）/g, '').replace(/駅$/, '').trim();
 }
 
-function findMatchingProperties(stationName, ageRange, csvData) {
+function findMatchingProperties(stationName, ageRange, csvData, COL) {
   var normalizedTarget = normalizeStation(stationName);
   var matches = [];
 
@@ -111,7 +123,7 @@ function findMatchingProperties(stationName, ageRange, csvData) {
     if (csvStation !== normalizedTarget) continue;
 
     var walkTime = row[COL.WALK_TIME];
-    if (!walkTime || walkTime === '' || isNaN(parseInt(walkTime))) continue;
+    if (!walkTime || isNaN(parseInt(walkTime))) continue;
 
     var buildYear = parseBuildYear(row[COL.BUILD_YEAR]);
     if (!buildYear) continue;
@@ -127,16 +139,8 @@ function findMatchingProperties(stationName, ageRange, csvData) {
     var tsuboArea = area / TSUBO;
     var tsuboPrice = price / tsuboArea;
 
-    matches.push({
-      price: price,
-      area: area,
-      tsuboPrice: tsuboPrice,
-      buildYear: buildYear,
-      station: row[COL.STATION],
-      walkTime: parseInt(walkTime)
-    });
+    matches.push({ price, area, tsuboPrice });
   }
-
   return matches;
 }
 
@@ -146,10 +150,11 @@ function calculateAverageTsuboPrice(matches) {
   for (var i = 0; i < matches.length; i++) {
     sum += matches[i].tsuboPrice;
   }
-  return sum / matches.length;
+  return Math.round(sum / matches.length);
 }
 
 function yen(n) {
+  if (!n) return '0円';
   if (n >= 1e8) {
     var o = Math.floor(n / 1e8);
     var m = Math.round((n % 1e8) / 1e4);
@@ -161,58 +166,53 @@ function yen(n) {
 function parsePrice(text) {
   if (!text) return null;
   text = text.replace(/,/g, '');
-  var oku = 0;
-  var man = 0;
-
   var okuMatch = text.match(/(\d+)億/);
-  if (okuMatch) oku = parseInt(okuMatch[1]) * 10000;
-
   var manMatch = text.match(/(\d+)万/);
-  if (manMatch) man = parseInt(manMatch[1]);
-
-  if (oku === 0 && man === 0) {
-    var numMatch = text.replace(/[^0-9]/g, '');
-    return numMatch ? parseInt(numMatch) * 10000 : null;
-  }
-
+  var oku = okuMatch ? parseInt(okuMatch[1]) * 10000 : 0;
+  var man = manMatch ? parseInt(manMatch[1]) : 0;
   return (oku + man) * 10000;
 }
 
 function parseArea(text) {
   if (!text) return null;
-  var match = text.match(/([\d.]+)\s*m/);
+  var match = text.match(/([\d.]+)m²/);
   return match ? parseFloat(match[1]) : null;
 }
 
-function parseAge(text) {
-  if (!text) return null;
+function parseFloorsFromTitle(titleText) {
+  var floorMatch = titleText.match(/(\d+)階建/);
+  return floorMatch ? parseInt(floorMatch[1]) : null;
+}
 
-  var ageMatch = text.match(/築(\d+)年/);
-  if (ageMatch) return parseInt(ageMatch[1]);
+function parseAgeFromText(text) {
+  var ageMatch = text.match(/築(\d+(?:\.\d+)?)年/);
+  if (ageMatch) return parseFloat(ageMatch[1]);
 
   var yearMatch = text.match(/(\d{4})年/);
-  if (yearMatch) {
-    return NOW - parseInt(yearMatch[1]);
-  }
-
+  if (yearMatch) return NOW - parseInt(yearMatch[1]);
   return null;
 }
 
-function extractStationName(text) {
-  if (!text) return null;
-  var match = text.match(/「([^」]+)」/);
-  if (match) return match[1];
+function calculateHouseAdjustment(floors, age, landArea, buildingArea) {
+  if (!floors) return { adjustment: 1.0, note: '階数不明' };
 
-  var altMatch = text.match(/([^\s「」]+)駅/);
-  if (altMatch) return altMatch[1];
+  var floorFactor = Math.max(0.8, Math.min(1.5, 3 / floors));
+  var ageFactor = Math.max(0.3, 1 - (age || 0) / 100);
+  var landWeight = age > 25 ? 0.7 : age > 15 ? 0.4 : 0.2;
 
-  return null;
+  return {
+    adjustment: floorFactor * ageFactor,
+    note: `階数${floors}F・土地/建物考慮`
+  };
 }
 
-function extractPropertyData(card) {
+function extractPropertyData(card, propType) {
   var data = {
     price: null,
-    area: null,
+    landArea: null,
+    buildingArea: null,
+    exclusiveArea: null,
+    floors: null,
     age: null,
     station: null,
     ageRange: null,
@@ -220,13 +220,16 @@ function extractPropertyData(card) {
   };
 
   var priceEl = card.querySelector('.property-price');
-  if (priceEl) {
-    data.price = parsePrice(priceEl.textContent);
+  if (priceEl) data.price = parsePrice(priceEl.textContent);
+
+  var titleEl = card.querySelector('.title-wrap__title-text');
+  if (titleEl && propType === 'house') {
+    data.floors = parseFloorsFromTitle(titleEl.textContent);
   }
 
-  var detailBlocks = card.querySelectorAll('.property-detail-table__block');
-  for (var i = 0; i < detailBlocks.length; i++) {
-    var block = detailBlocks[i];
+  var blocks = card.querySelectorAll('.property-detail-table__block');
+  for (var i = 0; i < blocks.length; i++) {
+    var block = blocks[i];
     var label = block.querySelector('strong');
     var value = block.querySelector('span');
 
@@ -235,39 +238,42 @@ function extractPropertyData(card) {
     var labelText = label.textContent.trim();
     var valueText = value.textContent.trim();
 
-    if (labelText.indexOf('専有面積') !== -1 || labelText.indexOf('建物面積') !== -1) {
-      data.area = parseArea(valueText);
+    if (labelText === '土地面積') data.landArea = parseArea(valueText);
+    if (labelText === '建物面積') data.buildingArea = parseArea(valueText);
+
+    if (labelText === '専有面積') data.exclusiveArea = parseArea(valueText);
+
+    if (labelText === '築年月') {
+      data.age = parseAgeFromText(valueText);
+      data.ageRange = data.age !== null ? getAgeRange(data.age) : null;
     }
 
-    if (labelText.indexOf('築年月') !== -1) {
-      data.age = parseAge(valueText);
-      if (data.age !== null) {
-        data.ageRange = getAgeRange(data.age);
-      }
-    }
-
-    if (labelText.indexOf('交通') !== -1) {
-      data.station = extractStationName(valueText);
+    if (labelText === '交通') {
+      var stationMatch = valueText.match(/「([^」]+)」|([^\s「」／]+)駅/);
+      if (stationMatch) data.station = stationMatch[1] || stationMatch[2];
     }
   }
 
-  if (data.price && data.area && data.area > 0) {
-    data.tsuboPrice = Math.round(data.price / (data.area / TSUBO));
+  var baseArea = propType === 'house'
+    ? (data.buildingArea || data.landArea)
+    : data.exclusiveArea;
+
+  if (data.price && baseArea && baseArea > 0) {
+    data.tsuboPrice = Math.round(data.price / (baseArea / TSUBO));
   }
 
   return data;
 }
 
-function appendComparison(card, data, reasonablePrice, matchCount, avgTsuboPrice) {
+function appendComparison(card, data, reasonablePrice, matchCount, avgTsuboPrice, adjustmentNote) {
   if (card.querySelector('.athome-price-checker')) return;
 
   var detailDiv = card.querySelector('.card-box-inner__detail');
   if (!detailDiv) return;
 
   var diff = data.price - reasonablePrice;
-  var diffPercent = (diff / reasonablePrice) * 100;
-  var diffText = '';
-  var diffClass = '';
+  var diffPercent = reasonablePrice ? (diff / reasonablePrice) * 100 : 0;
+  var diffText = '', diffClass = '';
 
   if (diffPercent > 3) {
     diffText = '↑ ' + Math.abs(diffPercent).toFixed(1) + '%高い';
@@ -289,8 +295,10 @@ function appendComparison(card, data, reasonablePrice, matchCount, avgTsuboPrice
     '<span class="price-checker-diff">' + diffText + '</span>' +
     '</div>' +
     '<div class="price-checker-detail">' +
-    '適正: ' + yen(reasonablePrice) + ' / 坪単価: ' + yen(avgTsuboPrice) + '/坪' +
+    '適正: ' + yen(reasonablePrice) +
+    ' / 基準坪単価: ' + yen(avgTsuboPrice) + '/坪' +
     '（' + data.station + '駅・築' + data.ageRange + '年 ' + matchCount + '件）' +
+    (adjustmentNote ? '<br><small>' + adjustmentNote + '</small>' : '') +
     '</div>';
 
   detailDiv.appendChild(newEl);
@@ -298,7 +306,6 @@ function appendComparison(card, data, reasonablePrice, matchCount, avgTsuboPrice
 
 function appendNoData(card, reason) {
   if (card.querySelector('.athome-price-checker')) return;
-
   var detailDiv = card.querySelector('.card-box-inner__detail');
   if (!detailDiv) return;
 
@@ -307,6 +314,7 @@ function appendNoData(card, reason) {
   newEl.style.marginTop = '10px';
   newEl.style.borderTop = '1px dashed #ccc';
   newEl.style.paddingTop = '10px';
+  newEl.style.color = '#666';
   newEl.innerHTML = '<div class="price-checker-result nodata">' +
     '<span class="price-checker-label">' + reason + '</span>' +
     '</div>';
@@ -316,96 +324,80 @@ function appendNoData(card, reason) {
 
 function processProperties() {
   var propType = detectPropertyType();
-  if (!propType) {
-    console.log('Athome Price Checker: Could not detect property type');
-    return;
-  }
+  if (!propType) return console.log('[Athome] Unknown type');
 
   var csvData = propType === 'house' ? csvDataHouse : csvDataApartment;
+  var COL = propType === 'house' ? COL_HOUSE : COL_APARTMENT;
 
-  if (csvData.length === 0) {
-    console.log('Athome Price Checker: CSVデータがありません');
-    return;
-  }
+  if (csvData.length === 0) return console.log('[Athome] No CSV');
 
   var cards = document.querySelectorAll('athome-csite-pc-part-bukken-card-ryutsu-sell-living');
+  console.log('[Athome] Found', cards.length, propType, 'cards');
+
   var processed = 0;
+  cards.forEach(function (card) {
+    var data = extractPropertyData(card, propType);
 
-  console.log('Athome Price Checker: Found', cards.length, 'property cards');
+    var hasArea = propType === 'house'
+      ? (data.buildingArea || data.landArea)
+      : data.exclusiveArea;
 
-  cards.forEach(function (card, index) {
-    var data = extractPropertyData(card);
+    if (!data.price || !hasArea) return;
 
-    if (!data.price || !data.area) {
-      console.log('Skipping property #' + (index + 1) + ': missing price or area');
+    if (!data.station || !data.ageRange) {
+      appendNoData(card, data.station ? '築年不明' : '駅不明');
       return;
     }
 
-    if (!data.station) {
-      appendNoData(card, '駅名を取得できません');
+    if (propType === 'house' && !data.floors) {
+      appendNoData(card, '階数不明（タイトル確認要）');
       return;
     }
 
-    if (!data.ageRange) {
-      appendNoData(card, '築年数を取得できません');
-      return;
-    }
-
-    var matches = findMatchingProperties(data.station, data.ageRange, csvData);
-
+    var matches = findMatchingProperties(data.station, data.ageRange, csvData, COL);
     if (matches.length === 0) {
-      appendNoData(card, data.station + '駅・築' + data.ageRange + '年の取引データなし');
+      appendNoData(card, data.station + '駅・築' + data.ageRange + '年データなし');
       return;
     }
 
     var avgTsuboPrice = calculateAverageTsuboPrice(matches);
+    var baseArea = propType === 'house'
+      ? (data.buildingArea || data.landArea)
+      : data.exclusiveArea;
+    var baseReasonable = avgTsuboPrice * (baseArea / TSUBO);
 
-    var tsuboArea = data.area / TSUBO;
-    var reasonablePrice = avgTsuboPrice * tsuboArea;
+    var finalReasonable = baseReasonable;
+    var adjustmentNote = '';
 
-    appendComparison(card, data, reasonablePrice, matches.length, avgTsuboPrice);
+    if (propType === 'house') {
+      var adj = calculateHouseAdjustment(data.floors, data.age, data.landArea, data.buildingArea);
+      finalReasonable = Math.round(baseReasonable * adj.adjustment);
+      adjustmentNote = adj.note;
+    }
+
+    appendComparison(card, data, finalReasonable, matches.length, avgTsuboPrice, adjustmentNote);
     processed++;
   });
 
-  console.log('Athome Price Checker: ' + processed + '/' + cards.length + '件の物件を処理しました');
+  console.log('[Athome] Processed', processed, '/', cards.length);
 }
 
 function init() {
   checkEnabled(function (enabled, apartmentEnabled, houseEnabled) {
-    if (!enabled) {
-      console.log('Athome Price Checker: 無効化されています');
-      return;
-    }
+    if (!enabled) return;
 
     var propType = detectPropertyType();
-    if (!propType) {
-      console.log('Athome Price Checker: Could not detect property type from URL');
-      return;
-    }
+    if (!propType) return;
 
-    var isApartment = propType === 'apartment';
-    if (isApartment && !apartmentEnabled) {
-      console.log('Athome Price Checker: 中古マンションが無効化されています');
-      return;
-    }
-
-    if (!isApartment && !houseEnabled) {
-      console.log('Athome Price Checker: 中古一戸建てが無効化されています');
-      return;
-    }
+    if (propType === 'apartment' && !apartmentEnabled) return;
+    if (propType === 'house' && !houseEnabled) return;
 
     loadCSV(function () {
       processProperties();
 
-      var observer = new MutationObserver(function (mutations) {
-        var hasNewCards = mutations.some(function (m) {
-          return m.addedNodes.length > 0;
-        });
-        if (hasNewCards) {
-          setTimeout(processProperties, 500);
-        }
+      var observer = new MutationObserver(function () {
+        setTimeout(processProperties, 500);
       });
-
       observer.observe(document.body, { childList: true, subtree: true });
     });
   });

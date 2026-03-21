@@ -50,13 +50,11 @@ var PREFECTURE_MAP = {
 
 function detectPrefectureFromURL() {
   var url = window.location.href.toLowerCase();
-
   for (var key in PREFECTURE_MAP) {
-    if (url.indexOf(key) !== -1) {
+    if (url.indexOf(key.toLowerCase()) !== -1) {
       return PREFECTURE_MAP[key];
     }
   }
-
   return null;
 }
 
@@ -66,7 +64,7 @@ function detectPrefectureFromMeta() {
     var content = metaTags[i].getAttribute('content');
     if (content) {
       for (var key in PREFECTURE_MAP) {
-        if (content.toLowerCase().indexOf(key) !== -1) {
+        if (content.toLowerCase().indexOf(key.toLowerCase()) !== -1) {
           return PREFECTURE_MAP[key];
         }
       }
@@ -80,7 +78,7 @@ function detectPrefectureFromBreadcrumb() {
   for (var i = 0; i < breadcrumbs.length; i++) {
     var text = breadcrumbs[i].textContent.toLowerCase();
     for (var key in PREFECTURE_MAP) {
-      if (text.indexOf(key) !== -1) {
+      if (text.indexOf(key.toLowerCase()) !== -1) {
         return PREFECTURE_MAP[key];
       }
     }
@@ -91,13 +89,10 @@ function detectPrefectureFromBreadcrumb() {
 function detectPrefecture() {
   var pref = detectPrefectureFromURL();
   if (pref) return pref;
-
   pref = detectPrefectureFromMeta();
   if (pref) return pref;
-
   pref = detectPrefectureFromBreadcrumb();
   if (pref) return pref;
-
   return 'tokyo';
 }
 
@@ -139,11 +134,70 @@ function decompressGzip(compressedData) {
   });
 }
 
+function parseCSVLine(line) {
+  var row = [];
+  var inQuote = false;
+  var field = '';
+
+  for (var j = 0; j < line.length; j++) {
+    var c = line[j];
+    if (c === '"') {
+      inQuote = !inQuote;
+    } else if (c === ',' && !inQuote) {
+      row.push(field.trim());
+      field = '';
+    } else {
+      field += c;
+    }
+  }
+  row.push(field.trim());
+  return row;
+}
+
+function parseCSV(text, COL, propertyType) {
+  var lines = text.split('\n');
+  var result = [];
+  var useTypeFilter = propertyType === 'apartment';
+
+  console.log('[CSV Loader] Parsing', propertyType, 'with columns:',
+    Object.keys(COL).join(', '));
+
+  for (var i = 1; i < lines.length; i++) {
+    var line = lines[i].trim();
+    if (!line) continue;
+
+    var row = parseCSVLine(line);
+
+    while (row.length <= Math.max(COL.PRICE, COL.AREA, COL.STATION, COL.BUILD_YEAR)) {
+      row.push('');
+    }
+
+    var price = parseInt(row[COL.PRICE] || 0);
+    var area = parseFloat(row[COL.AREA] || 0);
+    var station = row[COL.STATION] || '';
+    var buildYear = row[COL.BUILD_YEAR] || '';
+
+    if (price > 0 && area > 0 && station && buildYear) {
+
+      if (useTypeFilter && (!row[COL.TYPE] ||
+        row[COL.TYPE].indexOf('中古マンション') === -1)) {
+        continue;
+      }
+
+      result.push(row);
+    }
+  }
+
+  console.log('[CSV Loader] Parsed', result.length, 'valid records for', propertyType);
+  return result;
+}
+
 function loadPrefectureCSV(prefecture, COL, propertyType, callback) {
   var dataSubdir = propertyType === 'house' ? 'ci' : 'cm';
   var csvUrl = chrome.runtime.getURL('data/' + dataSubdir + '/' + prefecture + '.csv.gz');
 
-  console.log('[CSV Loader] Loading', propertyType, 'data for prefecture:', prefecture, 'from', csvUrl);
+  console.log('[CSV Loader] Loading', propertyType, 'data for prefecture:', prefecture,
+    'from', csvUrl, 'using COL:', JSON.stringify(Object.keys(COL)));
 
   fetch(csvUrl)
     .then(function (response) {
@@ -183,39 +237,4 @@ function loadPrefectureCSV(prefecture, COL, propertyType, callback) {
       console.error('[CSV Loader] Failed to load CSV:', err);
       callback([]);
     });
-}
-
-function parseCSV(text, COL, propertyType) {
-  var lines = text.split('\n');
-  var result = [];
-
-  var typeFilter = propertyType === 'house' ? '中古一戸建て' : '中古マンション';
-
-  for (var i = 1; i < lines.length; i++) {
-    var line = lines[i].trim();
-    if (!line) continue;
-
-    var row = [];
-    var inQuote = false;
-    var field = '';
-
-    for (var j = 0; j < line.length; j++) {
-      var c = line[j];
-      if (c === '"') {
-        inQuote = !inQuote;
-      } else if (c === ',' && !inQuote) {
-        row.push(field.trim());
-        field = '';
-      } else {
-        field += c;
-      }
-    }
-    row.push(field.trim());
-
-    if (row[COL.TYPE] && row[COL.TYPE].indexOf(typeFilter) !== -1) {
-      result.push(row);
-    }
-  }
-
-  return result;
 }
