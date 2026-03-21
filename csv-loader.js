@@ -139,16 +139,17 @@ function decompressGzip(compressedData) {
   });
 }
 
-function loadPrefectureCSV(prefecture, COL, callback) {
-  var csvUrl = chrome.runtime.getURL('data/' + prefecture + '.csv.gz');
+function loadPrefectureCSV(prefecture, COL, propertyType, callback) {
+  var dataSubdir = propertyType === 'house' ? 'ci' : 'cm';
+  var csvUrl = chrome.runtime.getURL('data/' + dataSubdir + '/' + prefecture + '.csv.gz');
 
-  console.log('[CSV Loader] Loading prefecture:', prefecture, 'from', csvUrl);
+  console.log('[CSV Loader] Loading', propertyType, 'data for prefecture:', prefecture, 'from', csvUrl);
 
   fetch(csvUrl)
     .then(function (response) {
       if (!response.ok) {
         console.warn('[CSV Loader] Gzipped file not found, trying uncompressed');
-        return fetch(chrome.runtime.getURL('data/' + prefecture + '.csv'));
+        return fetch(chrome.runtime.getURL('data/' + dataSubdir + '/' + prefecture + '.csv'));
       }
       return response;
     })
@@ -173,7 +174,7 @@ function loadPrefectureCSV(prefecture, COL, callback) {
 
       console.log('[CSV Loader] CSV loaded successfully, size:', text.length);
 
-      var csvData = parseCSV(text, COL);
+      var csvData = parseCSV(text, COL, propertyType);
       console.log('[CSV Loader] Parsed', csvData.length, 'records');
 
       callback(csvData);
@@ -184,9 +185,11 @@ function loadPrefectureCSV(prefecture, COL, callback) {
     });
 }
 
-function parseCSV(text, COL) {
+function parseCSV(text, COL, propertyType) {
   var lines = text.split('\n');
   var result = [];
+
+  var typeFilter = propertyType === 'house' ? '中古一戸建て' : '中古マンション';
 
   for (var i = 1; i < lines.length; i++) {
     var line = lines[i].trim();
@@ -209,7 +212,7 @@ function parseCSV(text, COL) {
     }
     row.push(field.trim());
 
-    if (row[COL.TYPE] && row[COL.TYPE].indexOf('中古マンション') !== -1) {
+    if (row[COL.TYPE] && row[COL.TYPE].indexOf(typeFilter) !== -1) {
       result.push(row);
     }
   }

@@ -1,7 +1,25 @@
 var TSUBO = 3.305785;
 var NOW = new Date().getFullYear();
 
-var csvData = [];
+var csvDataApartment = [];
+var csvDataHouse = [];
+
+function detectPropertyType() {
+  var url = window.location.href;
+  if (url.indexOf('/kodate/chuko/') !== -1) return 'house';
+  if (url.indexOf('/mansion/chuko/') !== -1) return 'apartment';
+  return null;
+}
+
+function checkEnabled(callback) {
+  chrome.storage.sync.get({
+    athomeEnabled: true,
+    apartmentEnabled: true,
+    houseEnabled: true
+  }, function (data) {
+    callback(data.athomeEnabled, data.apartmentEnabled, data.houseEnabled);
+  });
+}
 
 var COL = {
   TYPE: 0,
@@ -15,20 +33,42 @@ var COL = {
   TRADE_PERIOD: 18
 };
 
-function checkEnabled(callback) {
-  chrome.storage.sync.get({ athomeEnabled: true }, function (data) {
-    callback(data.athomeEnabled);
-  });
-}
-
 function loadCSV(callback) {
   var prefecture = detectPrefecture();
   console.log('[Athome] Detected prefecture:', prefecture);
 
-  loadPrefectureCSV(prefecture, COL, function (data) {
-    csvData = data;
-    console.log('[Athome] CSV loaded:', csvData.length, 'records');
-    callback();
+  var apartmentLoaded = false;
+  var houseLoaded = false;
+
+  chrome.storage.sync.get({
+    apartmentEnabled: true,
+    houseEnabled: true
+  }, function (data) {
+    var pendingLoads = 0;
+
+    if (data.apartmentEnabled) {
+      pendingLoads++;
+      loadPrefectureCSV(prefecture, COL, 'apartment', function (data) {
+        csvDataApartment = data;
+        console.log('[Athome] Apartment CSV loaded:', csvDataApartment.length, 'records');
+        apartmentLoaded = true;
+        pendingLoads--;
+        if (pendingLoads === 0) callback();
+      });
+    }
+
+    if (data.houseEnabled) {
+      pendingLoads++;
+      loadPrefectureCSV(prefecture, COL, 'house', function (data) {
+        csvDataHouse = data;
+        console.log('[Athome] House CSV loaded:', csvDataHouse.length, 'records');
+        houseLoaded = true;
+        pendingLoads--;
+        if (pendingLoads === 0) callback();
+      });
+    }
+
+    if (pendingLoads === 0) callback();
   });
 }
 
@@ -60,7 +100,7 @@ function normalizeStation(name) {
     .trim();
 }
 
-function findMatchingProperties(stationName, ageRange) {
+function findMatchingProperties(stationName, ageRange, csvData) {
   var normalizedTarget = normalizeStation(stationName);
   var matches = [];
 
@@ -195,7 +235,7 @@ function extractPropertyData(card) {
     var labelText = label.textContent.trim();
     var valueText = value.textContent.trim();
 
-    if (labelText.indexOf('専有面積') !== -1) {
+    if (labelText.indexOf('専有面積') !== -1 || labelText.indexOf('建物面積') !== -1) {
       data.area = parseArea(valueText);
     }
 
@@ -275,6 +315,14 @@ function appendNoData(card, reason) {
 }
 
 function processProperties() {
+  var propType = detectPropertyType();
+  if (!propType) {
+    console.log('Athome Price Checker: Could not detect property type');
+    return;
+  }
+
+  var csvData = propType === 'house' ? csvDataHouse : csvDataApartment;
+
   if (csvData.length === 0) {
     console.log('Athome Price Checker: CSVデータがありません');
     return;
@@ -287,15 +335,6 @@ function processProperties() {
 
   cards.forEach(function (card, index) {
     var data = extractPropertyData(card);
-
-    console.log('Athome Property #' + (index + 1) + ':', {
-      station: data.station,
-      price: data.price,
-      area: data.area,
-      age: data.age,
-      ageRange: data.ageRange,
-      tsuboPrice: data.tsuboPrice
-    });
 
     if (!data.price || !data.area) {
       console.log('Skipping property #' + (index + 1) + ': missing price or area');
@@ -312,16 +351,7 @@ function processProperties() {
       return;
     }
 
-    var matches = findMatchingProperties(data.station, data.ageRange);
-
-    console.log('=== ' + data.station + '駅 築' + data.ageRange + '年 マッチング結果 ===');
-    console.log('マッチ件数: ' + matches.length + '件');
-    if (matches.length > 0) {
-      matches.forEach(function (m, idx) {
-        console.log('  #' + (idx + 1) + ': ' + m.station + ' 築' + m.buildYear + '年 ' +
-          (m.area).toFixed(1) + '㎡ ' + yen(m.price) + ' (坪単価: ' + yen(m.tsuboPrice) + ', 徒歩' + m.walkTime + '分)');
-      });
-    }
+    var matches = findMatchingProperties(data.station, data.ageRange, csvData);
 
     if (matches.length === 0) {
       appendNoData(card, data.station + '駅・築' + data.ageRange + '年の取引データなし');
@@ -329,7 +359,6 @@ function processProperties() {
     }
 
     var avgTsuboPrice = calculateAverageTsuboPrice(matches);
-    console.log('平均坪単価: ' + yen(avgTsuboPrice));
 
     var tsuboArea = data.area / TSUBO;
     var reasonablePrice = avgTsuboPrice * tsuboArea;
@@ -342,9 +371,26 @@ function processProperties() {
 }
 
 function init() {
-  checkEnabled(function (enabled) {
+  checkEnabled(function (enabled, apartmentEnabled, houseEnabled) {
     if (!enabled) {
       console.log('Athome Price Checker: 無効化されています');
+      return;
+    }
+
+    var propType = detectPropertyType();
+    if (!propType) {
+      console.log('Athome Price Checker: Could not detect property type from URL');
+      return;
+    }
+
+    var isApartment = propType === 'apartment';
+    if (isApartment && !apartmentEnabled) {
+      console.log('Athome Price Checker: 中古マンションが無効化されています');
+      return;
+    }
+
+    if (!isApartment && !houseEnabled) {
+      console.log('Athome Price Checker: 中古一戸建てが無効化されています');
       return;
     }
 

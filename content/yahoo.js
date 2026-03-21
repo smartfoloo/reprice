@@ -1,7 +1,25 @@
 var TSUBO = 3.305785;
 var NOW = new Date().getFullYear();
 
-var csvData = [];
+var csvDataApartment = [];
+var csvDataHouse = [];
+
+function detectPropertyType() {
+  var url = window.location.href;
+  if (url.indexOf('/house/search/') !== -1) return 'house';
+  if (url.indexOf('/mansion/search/') !== -1) return 'apartment';
+  return null;
+}
+
+function checkEnabled(callback) {
+  chrome.storage.sync.get({
+    yahooEnabled: true,
+    apartmentEnabled: true,
+    houseEnabled: true
+  }, function (data) {
+    callback(data.yahooEnabled, data.apartmentEnabled, data.houseEnabled);
+  });
+}
 
 var COL = {
   TYPE: 0,
@@ -15,20 +33,42 @@ var COL = {
   TRADE_PERIOD: 18
 };
 
-function checkEnabled(callback) {
-  chrome.storage.sync.get({ yahooEnabled: true }, function (data) {
-    callback(data.yahooEnabled);
-  });
-}
-
 function loadCSV(callback) {
   var prefecture = detectPrefecture();
   console.log('[Yahoo] Detected prefecture:', prefecture);
 
-  loadPrefectureCSV(prefecture, COL, function (data) {
-    csvData = data;
-    console.log('[Yahoo] CSV loaded:', csvData.length, 'records');
-    callback();
+  var apartmentLoaded = false;
+  var houseLoaded = false;
+
+  chrome.storage.sync.get({
+    apartmentEnabled: true,
+    houseEnabled: true
+  }, function (data) {
+    var pendingLoads = 0;
+
+    if (data.apartmentEnabled) {
+      pendingLoads++;
+      loadPrefectureCSV(prefecture, COL, 'apartment', function (data) {
+        csvDataApartment = data;
+        console.log('[Yahoo] Apartment CSV loaded:', csvDataApartment.length, 'records');
+        apartmentLoaded = true;
+        pendingLoads--;
+        if (pendingLoads === 0) callback();
+      });
+    }
+
+    if (data.houseEnabled) {
+      pendingLoads++;
+      loadPrefectureCSV(prefecture, COL, 'house', function (data) {
+        csvDataHouse = data;
+        console.log('[Yahoo] House CSV loaded:', csvDataHouse.length, 'records');
+        houseLoaded = true;
+        pendingLoads--;
+        if (pendingLoads === 0) callback();
+      });
+    }
+
+    if (pendingLoads === 0) callback();
   });
 }
 
@@ -60,7 +100,7 @@ function normalizeStation(name) {
     .trim();
 }
 
-function findMatchingProperties(stationName, ageRange) {
+function findMatchingProperties(stationName, ageRange, csvData) {
   var normalizedTarget = normalizeStation(stationName);
   var matches = [];
 
@@ -265,6 +305,14 @@ function appendNoData(item, reason) {
 }
 
 function processProperties() {
+  var propType = detectPropertyType();
+  if (!propType) {
+    console.log('Yahoo Price Checker: Could not detect property type');
+    return;
+  }
+
+  var csvData = propType === 'house' ? csvDataHouse : csvDataApartment;
+
   if (csvData.length === 0) {
     console.log('Yahoo Price Checker: CSVデータがありません');
     return;
@@ -277,15 +325,6 @@ function processProperties() {
 
   items.forEach(function (item, index) {
     var data = extractPropertyData(item);
-
-    console.log('Yahoo Property #' + (index + 1) + ':', {
-      station: data.station,
-      price: data.price,
-      area: data.area,
-      age: data.age,
-      ageRange: data.ageRange,
-      tsuboPrice: data.tsuboPrice
-    });
 
     if (!data.price || !data.area) {
       console.log('Skipping property #' + (index + 1) + ': missing price or area');
@@ -302,16 +341,7 @@ function processProperties() {
       return;
     }
 
-    var matches = findMatchingProperties(data.station, data.ageRange);
-
-    console.log('=== ' + data.station + '駅 築' + data.ageRange + '年 マッチング結果 ===');
-    console.log('マッチ件数: ' + matches.length + '件');
-    if (matches.length > 0) {
-      matches.forEach(function (m, idx) {
-        console.log('  #' + (idx + 1) + ': ' + m.station + ' 築' + m.buildYear + '年 ' +
-          (m.area).toFixed(1) + '㎡ ' + yen(m.price) + ' (坪単価: ' + yen(m.tsuboPrice) + ', 徒歩' + m.walkTime + '分)');
-      });
-    }
+    var matches = findMatchingProperties(data.station, data.ageRange, csvData);
 
     if (matches.length === 0) {
       appendNoData(item, data.station + '駅・築' + data.ageRange + '年の取引データなし');
@@ -319,7 +349,6 @@ function processProperties() {
     }
 
     var avgTsuboPrice = calculateAverageTsuboPrice(matches);
-    console.log('平均坪単価: ' + yen(avgTsuboPrice));
 
     var tsuboArea = data.area / TSUBO;
     var reasonablePrice = avgTsuboPrice * tsuboArea;
@@ -332,9 +361,26 @@ function processProperties() {
 }
 
 function init() {
-  checkEnabled(function (enabled) {
+  checkEnabled(function (enabled, apartmentEnabled, houseEnabled) {
     if (!enabled) {
       console.log('Yahoo Price Checker: 無効化されています');
+      return;
+    }
+
+    var propType = detectPropertyType();
+    if (!propType) {
+      console.log('Yahoo Price Checker: Could not detect property type from URL');
+      return;
+    }
+
+    var isApartment = propType === 'apartment';
+    if (isApartment && !apartmentEnabled) {
+      console.log('Yahoo Price Checker: 中古マンションが無効化されています');
+      return;
+    }
+
+    if (!isApartment && !houseEnabled) {
+      console.log('Yahoo Price Checker: 中古一戸建てが無効化されています');
       return;
     }
 
