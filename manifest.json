@@ -6,6 +6,9 @@
   "permissions": [
     "storage"
   ],
+  "host_permissions": [
+    "https://www.google-analytics.com/"
+  ],
   "content_scripts": [
     {
       "matches": [
@@ -13,7 +16,7 @@
         "*://*.suumo.jp/*"
       ],
       "js": [
-        "content.js",
+        "content/suumo.js",
         "csv-loader.js"
       ],
       "css": [
@@ -25,7 +28,7 @@
         "*://realestate.yahoo.co.jp/*"
       ],
       "js": [
-        "content-yahoo.js",
+        "content/yahoo.js",
         "csv-loader.js"
       ],
       "css": [
@@ -38,7 +41,7 @@
         "*://*.athome.co.jp/*"
       ],
       "js": [
-        "content-athome.js",
+        "content/athome.js",
         "csv-loader.js"
       ],
       "css": [
@@ -64,14 +67,14 @@
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "icon16.jpg",
-      "48": "icon48.jpg",
-      "128": "icon128.jpg"
+      "16": "icons/icon16.jpg",
+      "48": "icons/icon48.jpg",
+      "128": "icons/icon128.jpg"
     }
   },
   "icons": {
-    "16": "icon16.jpg",
-    "48": "icon48.jpg",
-    "128": "icon128.jpg"
+    "16": "icons/icon16.jpg",
+    "48": "icons/icon48.jpg",
+    "128": "icons/icon128.jpg"
   }
 }

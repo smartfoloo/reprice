@@ -273,12 +273,12 @@ function processProperties() {
   var items = document.querySelectorAll('.ListBukken2__list__item');
   var processed = 0;
 
-  console.log('[v0] Yahoo Price Checker: Found', items.length, 'property items');
+  console.log('Yahoo Price Checker: Found', items.length, 'property items');
 
   items.forEach(function (item, index) {
     var data = extractPropertyData(item);
 
-    console.log('[v0] Yahoo Property #' + (index + 1) + ':', {
+    console.log('Yahoo Property #' + (index + 1) + ':', {
       station: data.station,
       price: data.price,
       area: data.area,
@@ -288,7 +288,7 @@ function processProperties() {
     });
 
     if (!data.price || !data.area) {
-      console.log('[v0] Skipping property #' + (index + 1) + ': missing price or area');
+      console.log('Skipping property #' + (index + 1) + ': missing price or area');
       return;
     }
 
@@ -304,11 +304,11 @@ function processProperties() {
 
     var matches = findMatchingProperties(data.station, data.ageRange);
 
-    console.log('[v0] === ' + data.station + '駅 築' + data.ageRange + '年 マッチング結果 ===');
-    console.log('[v0] マッチ件数: ' + matches.length + '件');
+    console.log('=== ' + data.station + '駅 築' + data.ageRange + '年 マッチング結果 ===');
+    console.log('マッチ件数: ' + matches.length + '件');
     if (matches.length > 0) {
       matches.forEach(function (m, idx) {
-        console.log('[v0]   #' + (idx + 1) + ': ' + m.station + ' 築' + m.buildYear + '年 ' +
+        console.log('  #' + (idx + 1) + ': ' + m.station + ' 築' + m.buildYear + '年 ' +
           (m.area).toFixed(1) + '㎡ ' + yen(m.price) + ' (坪単価: ' + yen(m.tsuboPrice) + ', 徒歩' + m.walkTime + '分)');
       });
     }
@@ -319,7 +319,7 @@ function processProperties() {
     }
 
     var avgTsuboPrice = calculateAverageTsuboPrice(matches);
-    console.log('[v0] 平均坪単価: ' + yen(avgTsuboPrice));
+    console.log('平均坪単価: ' + yen(avgTsuboPrice));
 
     var tsuboArea = data.area / TSUBO;
     var reasonablePrice = avgTsuboPrice * tsuboArea;

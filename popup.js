@@ -1,4 +1,10 @@
-document.addEventListener('DOMContentLoaded', function () {
+import { sendGAEvent } from "./ga4.js";
+
+document.addEventListener('DOMContentLoaded', async function () {
+  await sendGAEvent("popup_opened", {
+    page: "popup",
+  });
+
   var suumoToggle = document.getElementById('suumoToggle');
   var athomeToggle = document.getElementById('athomeToggle');
   var yahooToggle = document.getElementById('yahooToggle');
@@ -13,15 +19,28 @@ document.addEventListener('DOMContentLoaded', function () {
     yahooToggle.checked = data.yahooEnabled;
   });
 
-  suumoToggle.addEventListener('change', function () {
+  suumoToggle.addEventListener("change", async function () {
     chrome.storage.sync.set({ suumoEnabled: suumoToggle.checked });
+    await sendGAEvent("suumo_toggle", {
+      trigger: "suumo_toggle",
+      enabled: suumoToggle.checked,
+    });
   });
 
-  athomeToggle.addEventListener('change', function () {
+  athomeToggle.addEventListener("change", async function () {
     chrome.storage.sync.set({ athomeEnabled: athomeToggle.checked });
+    await sendGAEvent("athome_toggle", {
+      trigger: "athome_toggle",
+      enabled: athomeToggle.checked,
+    });
   });
 
-  yahooToggle.addEventListener('change', function () {
+  yahooToggle.addEventListener("change", async function () {
     chrome.storage.sync.set({ yahooEnabled: yahooToggle.checked });
+    await sendGAEvent("yahoo_toggle", {
+      trigger: "yahoo_toggle",
+      enabled: yahooToggle.checked,
+    });
   });
+
 });
