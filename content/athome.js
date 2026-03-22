@@ -289,15 +289,16 @@ function appendComparison(card, data, reasonablePrice, matchCount, avgTsuboPrice
   var newEl = document.createElement('div');
   newEl.className = 'athome-price-checker';
   newEl.style.marginTop = '10px';
-  newEl.style.borderTop = '2px solid #0066cc';
-  newEl.style.paddingTop = '10px';
   newEl.innerHTML = '<div class="price-checker-result ' + diffClass + '">' +
     '<span class="price-checker-diff">' + diffText + '</span>' +
     '</div>' +
+    '<div class="price-checker-details"><div class="price-checker-detail">' +
+    '<strong>適正価格</strong><p>' + yen(reasonablePrice) + '</p></div>' +
     '<div class="price-checker-detail">' +
-    '適正: ' + yen(reasonablePrice) +
-    ' / 基準坪単価: ' + yen(avgTsuboPrice) + '/坪' +
-    '（' + data.station + '駅・築' + data.ageRange + '年 ' + matchCount + '件）' +
+    '<strong>基準坪単価</strong><p>' + yen(avgTsuboPrice) + '</p></div>' +
+    '<div class="price-checker-detail">' +
+    '<strong>条件</strong><p>' + data.station + '駅・築' + data.ageRange + '年 ' + matchCount + '件' + '</p>' +
+    '</div>' +
     (adjustmentNote ? '<br><small>' + adjustmentNote + '</small>' : '') +
     '</div>';
 

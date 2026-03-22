@@ -1,12 +1,12 @@
 /* SUUMO Price Checker Styles */
 .suumo-price-checker {
   background: #fff !important;
-  border-top: 2px solid #0066cc !important;
+  border-top: 1px dotted #C3C3C3 !important;
   padding: 8px 0 !important;
 }
 
 .suumo-price-checker dt {
-  color: #0066cc !important;
+  color: #333333 !important;
   font-weight: bold !important;
 }
 
@@ -20,6 +20,26 @@
 /* Athome Price Checker Styles */
 .athome-price-checker {
   font-family: sans-serif;
+}
+
+.athome-price-checker .price-checker-result {
+  margin-bottom: 14px;
+}
+
+.athome-price-checker .price-checker-detail {
+  font-size: 14px !important;
+  padding-bottom: 8px;
+}
+
+.athome-price-checker .price-checker-detail strong {
+  font-size: 12px !important;
+  min-width: 60px !important;
+  display: inline-block !important;
+}
+
+.athome-price-checker .price-checker-detail p {
+  margin-left: 12px;
+  display: inline-block;
 }
 
 /* Common Price Checker Result Styles */
@@ -65,6 +85,5 @@
 .price-checker-detail {
   display: block;
   font-size: 12px;
-  color: #666;
-  margin-top: 4px;
+  color: #333333;
 }

@@ -297,7 +297,6 @@ function appendComparison(unit, data, reasonablePrice, matchCount, avgTsuboPrice
   var newLine = document.createElement('div');
   newLine.className = 'dottable-line suumo-price-checker';
   newLine.innerHTML = '<dl>' +
-    '<dt class="dottable-vm">適正価格比較</dt>' +
     '<dd class="dottable-vm">' +
     '<span class="price-checker-result ' + diffClass + '">' +
     '<span class="price-checker-diff">' + diffText + '</span>' +
