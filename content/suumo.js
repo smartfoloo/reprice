@@ -301,12 +301,13 @@ function appendComparison(unit, data, reasonablePrice, matchCount, avgTsuboPrice
     '<span class="price-checker-result ' + diffClass + '">' +
     '<span class="price-checker-diff">' + diffText + '</span>' +
     '</span>' +
-    '<span class="price-checker-detail">' +
-    '適正: ' + yen(reasonablePrice) + ' / 坪単価: ' + yen(avgTsuboPrice) + '/坪' +
-    '（' + data.station + '駅・築' + data.ageRange + '年 ' + matchCount + '件）' +
-    '</span>' +
-    '</dd>' +
-    '</dl>';
+    '<div class="price-checker-details"><div class="price-checker-detail">' +
+    '<strong>適正価格</strong><p>' + yen(reasonablePrice) + '</p></div>' +
+    '<div class="price-checker-detail">' +
+    '<strong>基準坪単価</strong><p>' + yen(avgTsuboPrice) + '</p></div>' +
+    '<div class="price-checker-detail">' +
+    '<strong>条件</strong><p>' + data.station + '駅・築' + data.ageRange + '年 ' + matchCount + '件' + '</p>' +
+    '</div>' + '</div>' + '</dd>' + '</dl>';
 
   dottable.appendChild(newLine);
 }

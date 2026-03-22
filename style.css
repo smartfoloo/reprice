@@ -10,6 +10,19 @@
   font-weight: bold !important;
 }
 
+.suumo-price-checker .price-checker-result {
+  margin-bottom: 14px;
+}
+
+.suumo-price-checker .price-checker-detail strong, p {
+  display: inline-block !important;
+  min-width: 67px !important;
+}
+
+.suumo-price-checker .price-checker-detail strong {
+  margin-right: 7px;
+}
+
 /* Yahoo Price Checker Styles */
 .yahoo-price-checker {
   margin-top: 8px;
