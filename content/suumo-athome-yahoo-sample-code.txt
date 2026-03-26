@@ -1,0 +1,1489 @@
+SUUMO CODE
+
+<div class="property_unit property_unit--osusume">
+		<div class="property_unit-input data_table">
+			<p class="ui-sprite--mark_check">チェック</p>
+				<input id="bukken_1" type="checkbox" class="js-ikkatsuCB" value="01179175921" name="bsnc">
+				<label for="bukken_1" class="cbx_list">&nbsp;</label>
+			<input class="js-clipkey" type="hidden" value="79175921_011">
+		</div>
+		<div class="property_unit-content">
+			<div class="property_unit-header">
+				<ul class="property_unit-pcts ui-list--hz">
+						<li><span class="ui-pct ui-pct--util1">購入サポート情報</span></li></ul>
+				<h2 class="property_unit-title">
+					<a href="/ms/chuko/tokyo/sc_minato/nc_79175921/" target="_blank">《室内リフォーム済/清水建設株式会社施工・免震構造タワーマンション》</a></h2>
+				<div class="property_unit-action">
+						<ul class="property_unit-action-btn">
+							<li><a href="javascript:void(0);" class="ui-sprite--actionbtn_addmylist js-addMyList js-addMyListLog_79175921">お気に入りに追加する</a></li>
+								<li><a href="/jj/bukken/shiryou/JJ010FJ010/?ar=030&amp;bs=011&amp;nc=79175921&amp;senimotokbn=1" class="ui-btn ui-btn--cta2 ui-btn--small2" title="資料請求する" rel="nofollow">資料請求する</a></li>
+							</ul>
+					</div>
+				</div>
+			<div class="property_unit-body ofh">
+				<div class="ui-media">
+					<div class="ui-media-object property_unit-object">
+						<a href="/ms/chuko/tokyo/sc_minato/nc_79175921/" target="_blank" class="ui-thumb ui-thumb--1"><img src="https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F921%2F79175921%2F79175921_0016.jpg&amp;w=192&amp;h=144" rel="https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F921%2F79175921%2F79175921_0016.jpg&amp;w=192&amp;h=144" alt="パークコート浜離宮ザタワー 画像１" width="192" height="144" class="js-noContextMenu"></a><div class="property_unit-thumb_group">
+								<ul class="property_unit-thumb">
+									<li>
+											<a href="/ms/chuko/tokyo/sc_minato/nc_79175921/" target="_blank" class="ui-thumb ui-thumb--1 ui-thumb--fit"><img src="https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F921%2F79175921%2F79175921_0007.jpg&amp;w=92&amp;h=69" rel="https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F921%2F79175921%2F79175921_0007.jpg&amp;w=92&amp;h=69" alt="パークコート浜離宮ザタワー 画像２" width="92" height="69" class="js-noContextMenu"></a></li>
+									<li>
+											<a href="/ms/chuko/tokyo/sc_minato/nc_79175921/" target="_blank" class="ui-thumb ui-thumb--1 ui-thumb--fit property_unit-thumb-movelink"><img src="https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F921%2F79175921%2F79175921_0030.jpg&amp;w=92&amp;h=69" rel="https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F921%2F79175921%2F79175921_0030.jpg&amp;w=92&amp;h=69" alt="パークコート浜離宮ザタワー 画像３" width="92" height="69" class="js-noContextMenu"><img class="property_unit-thumb-moveobject js-noContextMenu" width="92" height="69" alt="パークコート浜離宮ザタワー 画像３" src="/edit/assets/suumo/img/move_92_69.png" rel="/edit/assets/suumo/img/move_92_69.png"></a></li>
+									</ul>
+							</div>
+						</div>
+					<div class="ui-media-body property_unit-info">
+						<div class="dottable dottable--cassette">
+							<div class="dottable-line">
+									<dl>
+										<dt class="dottable-vm">物件名</dt>
+										<dd class="dottable-vm">パークコート浜離宮ザタワー</dd>
+									</dl>
+								</div>
+							<div class="dottable-line">
+								<dl>
+									<dt class="dottable-vm">販売価格</dt>
+									<dd class="dottable-vm">
+										<span class="dottable-value">2億4780万円</span>
+									</dd>
+									</dl>
+							</div>
+							<div class="dottable-line">
+								<dl>
+									<dt>所在地</dt>
+									<dd>東京都港区浜松町１</dd>
+								</dl>
+								<dl>
+									<dt>沿線・駅</dt>
+									<dd>ＪＲ山手線「浜松町」徒歩5分</dd>
+								</dl>
+							</div>
+							<div class="dottable-line">
+										<table class="dottable-fix">
+											<tbody>
+												<tr>
+													<td>
+														<dl>
+															<dt>専有面積</dt>
+															<dd>54.48m<sup>2</sup>（壁芯）</dd>
+														</dl>
+													</td>
+													<td>
+														<dl>
+															<dt>間取り</dt>
+															<dd>1LDK</dd>
+														</dl>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="dottable-line">
+										<table class="dottable-fix">
+											<tbody>
+												<tr>
+													<td>
+														<dl>
+															<dt>バルコニー</dt>
+															<dd>14.4m<sup>2</sup></dd>
+														</dl>
+													</td>
+													<td>
+														<dl>
+															<dt>築年月</dt>
+															<dd>2019年2月</dd>
+														</dl>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								<div class="dottable-line">
+										<div class="pickupphotos">
+											<div class="pickupphotos-title">掲載写真</div>
+											<div class="pickupphotos-desc">
+													<span class="ui-icon ui-icon--camera_s"></span>おすすめ写真がそろってます
+												</div>
+											</div>
+										<ul class="property_unit-info-pct ui-list--hz">
+											<li><span class="ui-pct ui-label--cta3">間取り図</span></li>
+														<li><span class="ui-pct ui-label--cta3">外観</span></li>
+														<li><span class="ui-pct ui-label--cta3">リビング・居室</span></li>
+														<li><span class="ui-pct ui-label--cta3">浴室</span></li>
+														<li><span class="ui-pct ui-label--cta3">キッチン</span></li>
+														<li><span class="ui-pct ui-label--cta3">玄関</span></li>
+														<li><span class="ui-pct ui-label--cta3">洗面所</span></li>
+														<li><span class="ui-pct ui-label--cta3">トイレ</span></li>
+														<li><span class="ui-pct ui-label--cta3">エントランス</span></li>
+														<li><span class="ui-pct ui-label--cta3">共有施設</span></li>
+														</ul>
+									</div>
+								<div class="dottable-line suumo-price-checker"><dl><dd class="dottable-vm"><span class="price-checker-result expensive"><span class="price-checker-diff">↑ 26.8%高い</span></span><div class="price-checker-details"><div class="price-checker-detail"><strong>適正価格</strong><p>1億9,538万円</p></div><div class="price-checker-detail"><strong>基準坪単価</strong><p>1,186万円</p></div><div class="price-checker-detail"><strong>条件</strong><p>浜松町駅・築1-10年 53件</p></div></div></dd></dl></div></div>
+					</div>
+				</div>
+				<div class="moreinfo">
+					<div class="moreinfo-box">
+						<div class="makermore">
+							<div class="makermore-repute">
+								<div class="shopmore">
+									<div class="shopmore-title">
+											明和地所(株)渋谷店</div>
+									</div>
+							</div>
+							<div class="makermore-tel">
+										<span class="kr-list-icon kr_list-icon--tel"></span><span class="makermore-tel-txt">0120-334043</span>
+									</div>
+								</div>
+					</div>
+				</div>
+			</div>
+			<div class="property_unit-footer">
+					<p class="property_unit-txt">
+						<span class="property_unit-attention">パークコート浜離宮</span>ザタワー/《室内リフォーム済/清水建設株…</p>
+				</div>
+			</div>
+	</div>
+
+ATHOME CODE
+
+<athome-csite-pc-part-bukken-card-ryutsu-sell-living _ngcontent-serverapp-c2779866145="" _nghost-serverapp-c2226497930="">
+<div _ngcontent-serverapp-c2226497930="" class="card-box open">
+  <div _ngcontent-serverapp-c2226497930="" class="card-box-close">
+    <div _ngcontent-serverapp-c2226497930="" class="card-box-inner__head card-box-inner__head--disabled">
+      <div _ngcontent-serverapp-c2226497930="" class="title-wrap">
+        <div _ngcontent-serverapp-c2226497930="" class="title-wrap__title-text">
+          パークコート浜離宮　ザ　タワー 28階 １ＬＤＫ
+          <p _ngcontent-serverapp-c2226497930="">24,780万円</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div _ngcontent-serverapp-c2226497930="" class="card-box-open">
+    <a _ngcontent-serverapp-c2226497930="" target="_blank" data-event="clicktracking" data-category="物件" data-action="遷移" data-label="物件遷移" href="/mansion/1110031014/?DOWN=2&amp;BKLISTID=002LPC&amp;SEARCHDIV=1&amp;sref=list_simple">
+      <ul _ngcontent-serverapp-c2226497930="" class="icon-list fixed-icon-list">
+        <!---->
+        <!---->
+      </ul>
+
+      <div _ngcontent-serverapp-c2226497930="" appswiper="" class="swiper-container card-box-image-slide swiper-container-initialized swiper-container-horizontal">
+        <!---->
+        <ul _ngcontent-serverapp-c2226497930="" class="swiper-wrapper">
+          <li _ngcontent-serverapp-c2226497930="" class="swiper-slide bukken-item swiper-slide-active">
+            <img _ngcontent-serverapp-c2226497930="" alt="" src="https://www.athome.co.jp/image_files/path/GiAJw73u2og3mRE_qw_CAg==" class="    ng-lazyloaded" loading="lazy" style="visibility: inherit;">
+          </li><li _ngcontent-serverapp-c2226497930="" class="swiper-slide bukken-item swiper-slide-next">
+            <img _ngcontent-serverapp-c2226497930="" alt="" src="https://www.athome.co.jp/image_files/path/occxdhUlFVYIp7qeb1th-Q==" class="    ng-lazyloaded" loading="lazy" style="visibility: inherit;">
+          </li><li _ngcontent-serverapp-c2226497930="" class="swiper-slide bukken-item">
+            <img _ngcontent-serverapp-c2226497930="" alt="" src="https://www.athome.co.jp/image_files/path/GiAJw73u2ohLKuolDwP8_A==" class="    ng-lazyloaded" loading="lazy" style="visibility: inherit;">
+          </li><li _ngcontent-serverapp-c2226497930="" class="swiper-slide bukken-item">
+            <img _ngcontent-serverapp-c2226497930="" alt="" src="/static_app_contents/ak01-20260316-163115/assets/common/loading_g.gif" class=" ng-lazyloading" loading="lazy" style="visibility: inherit;">
+          </li><!---->
+        </ul>
+        <div _ngcontent-serverapp-c2226497930="" class="swiper-button-prev swiper-button-disabled" tabindex="-1" role="button" aria-label="Previous slide" aria-disabled="true"></div>
+        <div _ngcontent-serverapp-c2226497930="" class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
+      <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div><!---->
+
+      <div _ngcontent-serverapp-c2226497930="" class="card-box-inner">
+        <div _ngcontent-serverapp-c2226497930="" class="card-box-inner__head">
+          <ul _ngcontent-serverapp-c2226497930="" class="icon-list fixed-icon-list">
+            <!---->
+            <!---->
+            <!---->
+            <li _ngcontent-serverapp-c2226497930="" class="round-icon round-icon--blue photos">写真充実</li><!---->
+          </ul><!---->
+          <div _ngcontent-serverapp-c2226497930="" class="select-box">
+            <input _ngcontent-serverapp-c2226497930="" type="checkbox" name="defalt-check[]" class="pc-default-checkbox item" id="1110031014" value="1110031014">
+            <label _ngcontent-serverapp-c2226497930="" for="1110031014"></label>
+          </div>
+          <div _ngcontent-serverapp-c2226497930="" class="title-wrap">
+            <label _ngcontent-serverapp-c2226497930="" for="1110031014"></label>
+            <!---->
+            <ul _ngcontent-serverapp-c2226497930="" class="icon-list">
+              <li _ngcontent-serverapp-c2226497930="" class="square-icon fwb square-icon--yellow">
+                リフォーム・リノベーション
+              </li>
+              <!---->
+              <!---->
+            </ul>
+            <div _ngcontent-serverapp-c2226497930="" class="title-wrap__title-text">パークコート浜離宮　ザ　タワー 28階 １ＬＤＫ</div>
+          </div>
+        </div>
+        <div _ngcontent-serverapp-c2226497930="" class="card-box-inner__detail">
+          <div _ngcontent-serverapp-c2226497930="" class="property-price">
+            24,780<span _ngcontent-serverapp-c2226497930="" class="fs14">万円</span>
+            <!---->
+          </div>
+          <div _ngcontent-serverapp-c2226497930="" class="property-detail-table">
+            
+            
+              <div _ngcontent-serverapp-c2226497930="" class="property-detail-table__group">
+                <div _ngcontent-serverapp-c2226497930="" class="property-detail-table__block col2">
+                  <strong _ngcontent-serverapp-c2226497930="">間取り</strong>
+                  <span _ngcontent-serverapp-c2226497930="" class="fwb">１ＬＤＫ</span>
+                </div>
+                <div _ngcontent-serverapp-c2226497930="" class="property-detail-table__block col2">
+                  <strong _ngcontent-serverapp-c2226497930="">築年月</strong>
+                  <span _ngcontent-serverapp-c2226497930="">2019年2月（築7年2ヶ月）</span>
+                </div>
+              </div>
+
+              <div _ngcontent-serverapp-c2226497930="" class="property-detail-table__group">
+                <div _ngcontent-serverapp-c2226497930="" class="property-detail-table__block col2">
+                  <strong _ngcontent-serverapp-c2226497930="">階建</strong>
+                  <span _ngcontent-serverapp-c2226497930="">地上37階地下1階建 / 28階</span>
+                </div>
+                <div _ngcontent-serverapp-c2226497930="" class="property-detail-table__block col2">
+                  <strong _ngcontent-serverapp-c2226497930="">構造</strong>
+                  <span _ngcontent-serverapp-c2226497930="">ＲＣ</span>
+                </div>
+              </div>
+
+              <div _ngcontent-serverapp-c2226497930="" class="property-detail-table__group">
+                <div _ngcontent-serverapp-c2226497930="" class="property-detail-table__block">
+                  <strong _ngcontent-serverapp-c2226497930="">専有面積</strong>
+                  <span _ngcontent-serverapp-c2226497930="">54.48m²</span>
+                </div>
+              </div>
+              <div _ngcontent-serverapp-c2226497930="" class="property-detail-table__group">
+                <div _ngcontent-serverapp-c2226497930="" class="property-detail-table__block">
+                  <strong _ngcontent-serverapp-c2226497930="">所在地</strong>
+                  <span _ngcontent-serverapp-c2226497930="">港区浜松町１丁目</span>
+                </div>
+              </div>
+              <div _ngcontent-serverapp-c2226497930="" class="property-detail-table__group">
+                <div _ngcontent-serverapp-c2226497930="" class="property-detail-table__block">
+                  <strong _ngcontent-serverapp-c2226497930="">交通</strong>
+                  <span _ngcontent-serverapp-c2226497930="">ＪＲ山手線 「浜松町」駅 徒歩5分</span>
+                </div>
+              </div>
+            <!----><!---->
+
+            
+            <!---->
+
+            <!---->
+            <!---->
+          </div>
+          <!---->
+          <!---->
+        <div class="athome-price-checker" style="margin-top: 10px;"><div class="price-checker-result expensive"><span class="price-checker-diff">↑ 26.8%高い</span></div><div class="price-checker-details"><div class="price-checker-detail"><strong>適正価格</strong><p>1億9,538万円</p></div><div class="price-checker-detail"><strong>基準坪単価</strong><p>1,186万円</p></div><div class="price-checker-detail"><strong>条件</strong><p>浜松町駅・築1-10年 53件</p></div></div></div></div>
+        <div _ngcontent-serverapp-c2226497930="" class="card-box-inner__bg-blue">
+          <div _ngcontent-serverapp-c2226497930="" class="card-box-inner__comment">
+            <dl _ngcontent-serverapp-c2226497930="">
+              <dt _ngcontent-serverapp-c2226497930="" class="thumbs-up-icon thumbs-up-icon--blue">おすすめコメント</dt>
+              <dd _ngcontent-serverapp-c2226497930="">
+                《2019年2月築・清水建設株式会社施工・免震構造タワーマンション》
+              </dd>
+            </dl>
+          </div><!---->
+          <div _ngcontent-serverapp-c2226497930="" class="card-box-inner__estate">
+            <div _ngcontent-serverapp-c2226497930="" class="estate-text-area">
+              <div _ngcontent-serverapp-c2226497930="" class="estate-text-area__title-wrap">
+                <a _ngcontent-serverapp-c2226497930="" target="_blank" href="/ahto/meiwa-realestate.html">明和地所の仲介　渋谷店　明和地所(株)（ＪＲ山手線/渋谷 徒歩15分）<!----><!----></a><!---->
+
+                <!---->
+
+                <span _ngcontent-serverapp-c2226497930="" class="square-icon square-icon--light-green photos">オンライン相談可</span><!---->
+              </div>
+              <p _ngcontent-serverapp-c2226497930="" class="estate-text-area__text">
+                マンション情報に特に強い当社。お住まい探し、お住み替えならお任せください！
+              </p><!---->
+            </div>
+          </div><!---->
+        </div>
+
+        <div _ngcontent-serverapp-c2226497930="" class="card-box-inner__contact">
+          <div _ngcontent-serverapp-c2226497930="" class="layout-block">
+            <a _ngcontent-serverapp-c2226497930="" href="javascript:void(0);" appfavanimation="" class="favorite-button" data-event="clicktracking" data-category="お気に入り" data-action="単体" data-label="お気に入り単体">
+              <span _ngcontent-serverapp-c2226497930="" class="icon-wrap">
+                <i _ngcontent-serverapp-c2226497930="" class="icon-wrap__fav-mark"></i>
+                <span _ngcontent-serverapp-c2226497930="" class="icon-wrap__fav-text">
+                  <!---->
+                </span><!---->
+              </span>
+              <span _ngcontent-serverapp-c2226497930="" class="favorite-button__fav-text">お気に入り登録</span><!---->
+              <!---->
+            </a>
+            <a _ngcontent-serverapp-c2226497930="" href="javascript:void(0);" class="contact-button" data-event="clicktracking" data-category="お問い合わせ" data-action="単体" data-label="お問い合わせ単体">
+              <span _ngcontent-serverapp-c2226497930="" class="icon-mail"></span>
+              お問合せ<span _ngcontent-serverapp-c2226497930="" class="fs12">(無料)</span>
+            </a><!---->
+          </div>
+          <a _ngcontent-serverapp-c2226497930="" target="_blank" class="select-link" data-event="clicktracking" data-category="物件" data-action="遷移" data-label="物件遷移" href="/mansion/1110031014/?DOWN=2&amp;BKLISTID=002LPC&amp;SEARCHDIV=1&amp;sref=list_simple">詳細をみる</a>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div _ngcontent-serverapp-c2226497930="" class="card-box-inner__open-close-area">
+    <span _ngcontent-serverapp-c2226497930="" class="close">物件を閉じる</span>
+    <span _ngcontent-serverapp-c2226497930="" class="open">物件を開く</span>
+  </div>
+</div>
+
+</athome-csite-pc-part-bukken-card-ryutsu-sell-living>
+
+YAHOO!FUDOSAN CODE
+
+<li class="ListBukken2__list__item _listItem">
+      
+    
+    <div class="ListCassette2--header">
+      <a href="https://realestate.yahoo.co.jp/used/mansion/detail_corp/b0024651049/" target="_blank" data-cl-params="_cl_link:est_dtl;_cl_position:4" data-testid="link:cassette-title" data-cl_cl_index="236">
+        <div class="ListCassette2__ttl">
+          <h2 class="ListCassette2__ttl__txt">クレストシティレジデンス</h2>
+          <ul class="ListCassette2__pointUnit--ttl">
+            
+          </ul>
+        </div>
+      </a>
+
+      <a href="https://realestate.yahoo.co.jp/used/mansion/detail_corp/b0024651049/" target="_blank" data-cl-params="_cl_link:est_dtl;_cl_position:4" data-testid="link:cassette-summary" data-cl_cl_index="237">
+        <div class="ListCassette2__summary">
+          
+    
+    
+      
+      
+        <div class="ListCassette2__img">
+          <span class="ListCassette2__img__innerFit">
+            
+    
+    
+    <picture>
+      
+        
+        <source type="image/webp" srcset="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2465/1049/0001/d5da5b876b7f76840b8fc28cdfa519f6_01_01.jpg?nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=184&amp;h=124&amp;fmt=webp 1x, https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2465/1049/0001/d5da5b876b7f76840b8fc28cdfa519f6_01_01.jpg?nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=368&amp;h=248&amp;fmt=webp 2x">
+      
+      <img class="ListCassette2__img__innerFit__img" alt="クレストシティレジデンス" src="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2465/1049/0001/d5da5b876b7f76840b8fc28cdfa519f6_01_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=184&amp;h=124" srcset="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2465/1049/0001/d5da5b876b7f76840b8fc28cdfa519f6_01_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=184&amp;h=124&amp;fmt=jpeg 1x, https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2465/1049/0001/d5da5b876b7f76840b8fc28cdfa519f6_01_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=368&amp;h=248&amp;fmt=jpeg 2x" loading="lazy">
+    </picture>
+  
+          </span>
+        </div>
+      
+    
+    
+  
+          <div class="ListCassette2__summary__cnt">
+            
+            <ul class="ListCassette2__info">
+              <li class="ListCassette2__info__dtl">都営大江戸線 「勝どき」駅 徒歩7分 他</li>
+              <li class="ListCassette2__info__dtl">東京都中央区勝どき5丁目</li>
+              <li class="ListCassette2__info__dtl">2007年2月（築20年）</li>
+              
+              
+              
+              <li class="ListCassette2__info__dtl">
+                総戸数 495戸
+                
+                 / 地上18階
+                
+              </li>
+              
+            <li class="ListCassette2__info__dtl yahoo-price-checker"><span class="price-checker-result cheap"><span class="price-checker-diff">↓ 6.1%安い</span></span> <span class="price-checker-detail">適正: 1億2,465万円 / 基準坪単価: 624万円/坪（勝どき駅・築11-20年 267件）</span></li></ul>
+          </div>
+        </div>
+      </a>
+    </div>
+  
+      <ul class="ListBukken2__innerList">
+        
+          
+          
+    
+    <li class="ListBukken2__innerList__item">
+      <div class="ListCassette2 _listCassettes" data-buildings="[{&quot;position&quot;:1,&quot;cassetteType&quot;:&quot;NORMAL&quot;,&quot;showStaffComment&quot;:false,&quot;aggregationId&quot;:&quot;10JVWwu61dfXxyivlh3SW1&quot;,&quot;buildingId&quot;:&quot;0024651049&quot;,&quot;groupId&quot;:&quot;00003314102&quot;,&quot;buildingName&quot;:&quot;クレストシティレジデンス&quot;,&quot;buildingKind&quot;:&quot;4&quot;,&quot;group&quot;:&quot;36&quot;,&quot;pfCode&quot;:&quot;13&quot;,&quot;geoCode&quot;:&quot;13102&quot;,&quot;companyId&quot;:&quot;00023174&quot;,&quot;insideBuildingNo&quot;:&quot;611220000132807&quot;,&quot;callFree&quot;:true,&quot;forwardingTelNum&quot;:&quot;03-6221-1101&quot;,&quot;inquired&quot;:false}]">
+        
+    
+    <a href="https://realestate.yahoo.co.jp/used/mansion/detail_corp/b0024651049/" target="_blank" data-cl-params="_cl_link:room;_cl_position:1;" data-testid="link:cassette-room-title" data-cl_cl_index="238">
+      <div class="ListCassette2__ttl--room">
+        <h2 class="ListCassette2__ttl__txt--inner">2階 / 南東 / 66.05m<sup>2</sup> / 2LDK</h2>
+        <ul class="ListCassette2__pointUnit">
+          
+        </ul>
+      </div>
+    </a>
+  
+        
+        <ul class="ListCassette2__cpList _listCassettes_10JVWwu61dfXxyivlh3SW1" data-cassette-aggregation-id="10JVWwu61dfXxyivlh3SW1">
+          
+            
+            <li class="ListCassette2__cpItem _listCassette">
+              
+    
+    <div class="ListCassette2__wrap">
+      
+      <div class="_listCassetteCheckbox"><!----><div class="ListCassette2__checkboxWrap">
+    <div class="ListCassette2__tagRequest" style="display: none;"><!----><!----></div>
+    <label class="ListCassette2__checkbox">
+      <input type="checkbox" class="brandFormCheckboxUnit" name="checkbox" data-cl-params="_cl_vmodule:est_list;_cl_link:chkbx;_cl_position:1" data-testid="checkbox:cassette" data-cl_cl_index="1433">
+      <span class="brandFormCheckboxUnit__item"></span>
+    </label>
+  </div><!----></div>
+      <div class="ListCassette2__cnt _listCassetteContent">
+        <a class="ListCassette__linkArea _listCassetteDtlLink" href="https://realestate.yahoo.co.jp/used/mansion/detail_corp/b0024651049/" target="_blank" data-cl-params="_cl_vmodule:est_list_imp;_cl_link:0024651049;_cl_position:1" data-testid="link:cassette-dtl" data-cl_cl_index="239"></a>
+        <div class="ListCassette2__summary--cntInner">
+          <div class="ListCassette2__imgMWrap">
+            <div class="ListCassette2__imgM">
+              <span class="ListCassette2__imgM__innerFit">
+                
+    
+    
+    <picture>
+      
+        
+        <source type="image/webp" srcset="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2465/1049/0002/8b39353b99d8d3248b9aad2cc82154dd_02_01.jpg?nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=210&amp;h=210&amp;fmt=webp 1x, https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2465/1049/0002/8b39353b99d8d3248b9aad2cc82154dd_02_01.jpg?nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=420&amp;h=420&amp;fmt=webp 2x">
+      
+      <img class="ListCassette2__imgM__innerFit__img" alt="リビング広めの2LDKタイプ。 階下に住戸が無いため、小さなお子様のいらっしゃるご家族にも安心してお住いになれます。" src="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2465/1049/0002/8b39353b99d8d3248b9aad2cc82154dd_02_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=210&amp;h=210" srcset="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2465/1049/0002/8b39353b99d8d3248b9aad2cc82154dd_02_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=210&amp;h=210&amp;fmt=jpeg 1x, https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2465/1049/0002/8b39353b99d8d3248b9aad2cc82154dd_02_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=420&amp;h=420&amp;fmt=jpeg 2x" loading="lazy">
+    </picture>
+  
+              </span>
+            </div>
+            <div class="ListCassette2__imgM__txt">画像<span class="ListCassette2__imgM__txt__emp">27</span>枚
+            </div>
+          </div>
+          <ul class="ListCassette2__info">
+            <li class="ListCassette2__info__price">
+              1億1,700万円
+              
+            </li>
+            <li class="ListCassette2__info__cnt">
+              <ul class="ListCassette2__pointUnit">
+                
+              </ul>
+            </li>
+            
+            <li class="ListCassette2__info__companyInfoWrap">
+              <div class="ListCassette2__companyInfo">
+                
+                
+                <span class="ListCassette2__info__cpName">ロイヤルハウジング販売　勝どきザ・タワー店</span>
+              </div>
+              
+              
+              <div class="ListCassette2__contact">
+                <div class="ListCassette2__contact__phone">
+                  <svg class="svg--phone ListCassette2__contact__phone__icon" role="img" aria-label="電話番号">
+                    <use xlink:href="#svg--phone"></use>
+                  </svg>
+                  <span class="ListCassette2__contact__phone__number">0078-6014-51193</span>
+                  
+                  <div class="_listCassettePhoneQuestionIcon"><!----><div class="ListCassette2__contact__qLink">
+      <span class="ListCassette2__contact__qLink__link" data-testid="button:cassette-phone-quest">
+        <svg class="svg--questionCircle--neutral70 ListCassette2__contact__qLink__icon">
+          <use xlink:href="#svg--questionCircle--neutral70"></use>
+        </svg>
+      </span> 
+    </div><!----></div>
+                </div>
+                <ul class="ListCassette2__contact__btnWrp">
+                  <li class="ListCassette2__contact__btnWrp__itemInquiry">
+                    <button class="ListCassette2__contact__btnInquiry _listCassetteInquiryInfoButton" type="button" data-cl-params="_cl_vmodule:est_list;_cl_link:req;_cl_position:1" data-href="https://realestate.yahoo.co.jp/used/inquiry/info/?req=b0024651049" data-target="_blank" data-testid="button:cassette-inquiry" data-cl_cl_index="240">資料をもらう<span class="ListCassette2__contact__btnInquiry__tagFree brandTagFree">無料</span></button>
+                  </li>
+                  
+                  <li class="ListCassette2__contact__btnWrp__item _listCassetteFavoriteButton"><!----><button type="button" class="ListCassette2__contact__btnFavorite" style="" aria-label="お気に入りに追加" data-cl-params="_cl_vmodule:est_list;_cl_link:add;_cl_position:1" data-testid="button:cassette-favorite" data-cl_cl_index="1434">
+    <span class="brandIcon__likeL"></span>
+  </button><!----></li>
+                </ul>
+              </div>
+              <!--/.ListCassette2__contact-->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+            </li>
+          
+        </ul>
+        <span class="_listCassetteExpand"><!----><!----></span>
+      </div>
+    </li>
+  
+        
+          
+          
+    
+    <li class="ListBukken2__innerList__item">
+      <div class="ListCassette2 _listCassettes" data-buildings="[{&quot;position&quot;:1,&quot;cassetteType&quot;:&quot;NORMAL&quot;,&quot;showStaffComment&quot;:true,&quot;aggregationId&quot;:&quot;5uEvO5295tLuwge7Ku7DzC&quot;,&quot;buildingId&quot;:&quot;0024386677&quot;,&quot;groupId&quot;:&quot;00003314102&quot;,&quot;buildingName&quot;:&quot;クレストシティレジデンス&quot;,&quot;buildingKind&quot;:&quot;4&quot;,&quot;group&quot;:&quot;36&quot;,&quot;pfCode&quot;:&quot;13&quot;,&quot;geoCode&quot;:&quot;13102&quot;,&quot;companyId&quot;:&quot;00023961&quot;,&quot;insideBuildingNo&quot;:&quot;M00133145865&quot;,&quot;callFree&quot;:true,&quot;forwardingTelNum&quot;:&quot;03-6632-0450&quot;,&quot;inquired&quot;:false}]">
+        
+    
+    <a href="https://realestate.yahoo.co.jp/used/mansion/detail_corp/b0024386677/" target="_blank" data-cl-params="_cl_link:room;_cl_position:2;" data-testid="link:cassette-room-title" data-cl_cl_index="242">
+      <div class="ListCassette2__ttl--room">
+        <h2 class="ListCassette2__ttl__txt--inner">14階 / 南西 / 70.31m<sup>2</sup> / 3LDK</h2>
+        <ul class="ListCassette2__pointUnit">
+          
+            
+    
+    
+      <li class="ListCassette2__pointUnit__list">
+        <span class="brandTagAdvantage">リフォーム</span>
+      </li>
+    
+  
+          
+        </ul>
+      </div>
+    </a>
+  
+        
+        <ul class="ListCassette2__cpList _listCassettes_5uEvO5295tLuwge7Ku7DzC" data-cassette-aggregation-id="5uEvO5295tLuwge7Ku7DzC">
+          
+            
+            <li class="ListCassette2__cpItem _listCassette">
+              
+    
+    <div class="ListCassette2__wrap">
+      
+      <div class="_listCassetteCheckbox"><!----><div class="ListCassette2__checkboxWrap">
+    <div class="ListCassette2__tagRequest" style="display: none;"><!----><!----></div>
+    <label class="ListCassette2__checkbox">
+      <input type="checkbox" class="brandFormCheckboxUnit" name="checkbox" data-cl-params="_cl_vmodule:staffcom;_cl_link:chkbx;_cl_position:1" data-testid="checkbox:cassette" data-cl_cl_index="1435">
+      <span class="brandFormCheckboxUnit__item"></span>
+    </label>
+  </div><!----></div>
+      <div class="ListCassette2__cnt _listCassetteContent">
+        <a class="ListCassette__linkArea _listCassetteDtlLink" href="https://realestate.yahoo.co.jp/used/mansion/detail_corp/b0024386677/" target="_blank" data-cl-params="_cl_vmodule:staffcom_imp;_cl_link:0024386677;_cl_position:1" data-testid="link:cassette-dtl" data-cl_cl_index="243"></a>
+        <div class="ListCassette2__summary--cntInner">
+          <div class="ListCassette2__imgMWrap">
+            <div class="ListCassette2__imgM">
+              <span class="ListCassette2__imgM__innerFit">
+                
+    
+    
+    <picture>
+      
+        
+        <source type="image/webp" srcset="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2438/6677/0003/477b797d05bd188b9b333c0225b00e7b_04_01.jpg?nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=210&amp;h=210&amp;fmt=webp 1x, https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2438/6677/0003/477b797d05bd188b9b333c0225b00e7b_04_01.jpg?nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=420&amp;h=420&amp;fmt=webp 2x">
+      
+      <img class="ListCassette2__imgM__innerFit__img" alt="忙しく過ぎゆく日常を置き去るほど、ゆったりした時間が流れるリビング。" src="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2438/6677/0003/477b797d05bd188b9b333c0225b00e7b_04_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=210&amp;h=210" srcset="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2438/6677/0003/477b797d05bd188b9b333c0225b00e7b_04_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=210&amp;h=210&amp;fmt=jpeg 1x, https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2438/6677/0003/477b797d05bd188b9b333c0225b00e7b_04_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=420&amp;h=420&amp;fmt=jpeg 2x" loading="lazy">
+    </picture>
+  
+              </span>
+            </div>
+            <div class="ListCassette2__imgM__txt">画像<span class="ListCassette2__imgM__txt__emp">36</span>枚
+            </div>
+          </div>
+          <ul class="ListCassette2__info">
+            <li class="ListCassette2__info__price">
+              1億4,480万円
+              
+                
+    
+    
+      <span class="brandTagPriceUpdate ListCassette2__info__price__tag">価格更新</span>
+    
+  
+              
+            </li>
+            <li class="ListCassette2__info__cnt">
+              <ul class="ListCassette2__pointUnit">
+                
+                  
+    
+    
+      <li class="ListCassette2__pointUnit__list">
+        <span class="ListCassette2__pointUnit__tagCampaign TagCampaign">成約でもらえる</span>
+      </li>
+    
+  
+                
+                  
+    
+    
+      <li class="ListCassette2__pointUnit__list">
+        <span class="brandTagFullness">室内写真あり</span>
+      </li>
+    
+  
+                
+                  
+    
+    
+      <li class="ListCassette2__pointUnit__list">
+        <span class="brandTagFullness">水回り写真あり</span>
+      </li>
+    
+  
+                
+              </ul>
+            </li>
+            <li class="ListCassette2__info__rcm">
+              <div class="ListCassette2__summary--rcmInner">
+                <div class="ListCassette2__imgS">
+                  <span class="ListCassette2__imgS__inner">
+                    
+    
+    
+    <picture>
+      
+        
+        <source type="image/webp" srcset="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/shop_image/99/0002/3961/0031/785f3deb9a9cbe8dc67bfcd4e9663237_00_01.jpg?nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=50&amp;h=50&amp;fmt=webp 1x, https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/shop_image/99/0002/3961/0031/785f3deb9a9cbe8dc67bfcd4e9663237_00_01.jpg?nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=100&amp;h=100&amp;fmt=webp 2x">
+      
+      <img class="ListCassette2__imgS__inner__item" alt="人物画像" src="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/shop_image/99/0002/3961/0031/785f3deb9a9cbe8dc67bfcd4e9663237_00_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=50&amp;h=50" srcset="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/shop_image/99/0002/3961/0031/785f3deb9a9cbe8dc67bfcd4e9663237_00_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=50&amp;h=50&amp;fmt=jpeg 1x, https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/shop_image/99/0002/3961/0031/785f3deb9a9cbe8dc67bfcd4e9663237_00_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=100&amp;h=100&amp;fmt=jpeg 2x" loading="lazy">
+    </picture>
+  
+                  </span>
+                </div>
+                <ul class="ListCassette2__info">
+                  <li class="ListCassette2__info__ttl">
+                    <span class="ListCassette2__info__ttl__emp">おすすめポイント</span>
+                    店舗対応スタッフ
+                  </li>
+                  <li class="ListCassette2__info__txt">営業時間内（9:00～21:00）は空き状況確認の為、下記電話フォームより事前にお電話をして頂けるとスムーズにご案内ができます。▽TOHO　HOUSE　CLUB▽現時点の未来カレンダーの作成▽ご購入後もお客様の人生のパートナーとして暮らしの「安心」を守り続けます。【Yahoo！ 不動産キャンペーン対象店舗】当店で物件を成約するとPayPayボーナスライトがもらえる「Yahoo！ 不動産 物件ご成約キャンペーン」の対象になります。「資料をもらう」「見学予約をする」ボタンからお問い合わせください。※必ずYahoo！ JAPAN IDでログインしてください。※PayPayボーナスライトは出金と譲渡はできません。ご案内・詳細な資料のご請求はお気軽にどうぞ♪お電話でのお問い合わせも常時受け付けております！■頭金0円からのご購入可能です■（諸費用もOK）【東宝ハウス城東】提携住宅ローン　変動金利35年　0.52％お気軽にお問い合わせください。</li>
+                </ul>
+              </div>
+            </li>
+            <li class="ListCassette2__info__companyInfoWrap">
+              <div class="ListCassette2__companyInfo">
+                
+                <span class="TagContractPlus2 TagContractPlus2--gold">ゴールド推奨店</span>
+                <span class="ListCassette2__info__cpName">株式会社東宝ハウス城東</span>
+              </div>
+              
+              
+    
+    <a href="https://realestate.yahoo.co.jp/used/mansion/detail_corp/b0024386677/#shopReview" class="CompanyReview__listCassetteWrap" target="_blank" rel="noopener noreferrer" data-cl-params="_cl_link:review;_cl_position:00023961" data-testid="link:cassette-review" data-cl_cl_index="244">
+      
+      <div class="CompanyScoreStars">
+        <ol class="CompanyScoreStars__list" aria-label="5点満点中4.6点">
+          
+                <li class="CompanyScoreStars__listStarXsmall"></li>
+              
+                <li class="CompanyScoreStars__listStarXsmall"></li>
+              
+                <li class="CompanyScoreStars__listStarXsmall"></li>
+              
+                <li class="CompanyScoreStars__listStarXsmall"></li>
+              
+              
+                <li class="CompanyScoreStars__listStarXsmall--half"></li>
+              
+              
+        </ol>
+        <p class="CompanyScoreStars__pointSmall">4.6</p>
+      </div>
+      <!-- /.CompanyScoreStars -->
+      <div class="CompanyReview__reviewLinkDefault">
+        <svg class="svg--commentleader--1a75ff CompanyReview__countIcon" role="none">
+          <use xlink:href="#svg--commentleader--1a75ff"></use>
+        </svg>
+        <span class="CompanyReview__titleLinkSmall">不動産会社レビュー
+          43件</span>
+      </div>
+    </a>
+  
+              <div class="ListCassette2__contact">
+                <div class="ListCassette2__contact__phone">
+                  <svg class="svg--phone ListCassette2__contact__phone__icon" role="img" aria-label="電話番号">
+                    <use xlink:href="#svg--phone"></use>
+                  </svg>
+                  <span class="ListCassette2__contact__phone__number">0078-6014-55228</span>
+                  
+                  <div class="_listCassettePhoneQuestionIcon"><!----><div class="ListCassette2__contact__qLink">
+      <span class="ListCassette2__contact__qLink__link" data-testid="button:cassette-phone-quest">
+        <svg class="svg--questionCircle--neutral70 ListCassette2__contact__qLink__icon">
+          <use xlink:href="#svg--questionCircle--neutral70"></use>
+        </svg>
+      </span> 
+    </div><!----></div>
+                </div>
+                <ul class="ListCassette2__contact__btnWrp">
+                  <li class="ListCassette2__contact__btnWrp__itemInquiry">
+                    <button class="ListCassette2__contact__btnInquiry _listCassetteInquiryInfoButton" type="button" data-cl-params="_cl_vmodule:staffcom;_cl_link:req;_cl_position:1" data-href="https://realestate.yahoo.co.jp/used/inquiry/info/?req=b0024386677" data-target="_blank" data-testid="button:cassette-inquiry" data-cl_cl_index="245">資料をもらう<span class="ListCassette2__contact__btnInquiry__tagFree brandTagFree">無料</span></button>
+                  </li>
+                  
+                  <li class="ListCassette2__contact__btnWrp__item _listCassetteFavoriteButton"><!----><button type="button" class="ListCassette2__contact__btnFavorite" style="" aria-label="お気に入りに追加" data-cl-params="_cl_vmodule:staffcom;_cl_link:add;_cl_position:1" data-testid="button:cassette-favorite" data-cl_cl_index="1436">
+    <span class="brandIcon__likeL"></span>
+  </button><!----></li>
+                </ul>
+              </div>
+              <!--/.ListCassette2__contact-->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+            </li>
+          
+        </ul>
+        <span class="_listCassetteExpand"><!----><!----></span>
+      </div>
+    </li>
+  
+        
+          
+          
+    
+    <li class="ListBukken2__innerList__item">
+      <div class="ListCassette2 _listCassettes" data-buildings="[{&quot;position&quot;:1,&quot;cassetteType&quot;:&quot;NORMAL&quot;,&quot;showStaffComment&quot;:true,&quot;aggregationId&quot;:&quot;6PloZt0BrlyN9GS87izOzp&quot;,&quot;buildingId&quot;:&quot;0024529285&quot;,&quot;groupId&quot;:&quot;00003314102&quot;,&quot;buildingName&quot;:&quot;クレストシティレジデンス&quot;,&quot;buildingKind&quot;:&quot;4&quot;,&quot;group&quot;:&quot;36&quot;,&quot;pfCode&quot;:&quot;13&quot;,&quot;geoCode&quot;:&quot;13102&quot;,&quot;companyId&quot;:&quot;00026420&quot;,&quot;insideBuildingNo&quot;:&quot;B02323-000488&quot;,&quot;callFree&quot;:true,&quot;forwardingTelNum&quot;:&quot;0120-104-782&quot;,&quot;inquired&quot;:false},{&quot;position&quot;:2,&quot;cassetteType&quot;:&quot;NORMAL&quot;,&quot;showStaffComment&quot;:true,&quot;aggregationId&quot;:&quot;6PloZt0BrlyN9GS87izOzp&quot;,&quot;buildingId&quot;:&quot;0024586742&quot;,&quot;groupId&quot;:&quot;00003314102&quot;,&quot;buildingName&quot;:&quot;クレストシティレジデンス&quot;,&quot;buildingKind&quot;:&quot;4&quot;,&quot;group&quot;:&quot;36&quot;,&quot;pfCode&quot;:&quot;13&quot;,&quot;geoCode&quot;:&quot;13102&quot;,&quot;companyId&quot;:&quot;00026192&quot;,&quot;insideBuildingNo&quot;:&quot;M00133260637&quot;,&quot;callFree&quot;:true,&quot;forwardingTelNum&quot;:&quot;03-6910-8630&quot;,&quot;inquired&quot;:false},{&quot;position&quot;:3,&quot;cassetteType&quot;:&quot;NORMAL&quot;,&quot;showStaffComment&quot;:true,&quot;aggregationId&quot;:&quot;6PloZt0BrlyN9GS87izOzp&quot;,&quot;buildingId&quot;:&quot;0024544406&quot;,&quot;groupId&quot;:&quot;00003314102&quot;,&quot;buildingName&quot;:&quot;クレストシティレジデンス&quot;,&quot;buildingKind&quot;:&quot;4&quot;,&quot;group&quot;:&quot;36&quot;,&quot;pfCode&quot;:&quot;13&quot;,&quot;geoCode&quot;:&quot;13102&quot;,&quot;companyId&quot;:&quot;00023442&quot;,&quot;insideBuildingNo&quot;:&quot;M01733237459&quot;,&quot;callFree&quot;:true,&quot;forwardingTelNum&quot;:&quot;03-5458-8070&quot;,&quot;inquired&quot;:false},{&quot;position&quot;:4,&quot;cassetteType&quot;:&quot;NORMAL&quot;,&quot;showStaffComment&quot;:false,&quot;aggregationId&quot;:&quot;6PloZt0BrlyN9GS87izOzp&quot;,&quot;buildingId&quot;:&quot;0024557732&quot;,&quot;groupId&quot;:&quot;00003314102&quot;,&quot;buildingName&quot;:&quot;クレストシティレジデンス&quot;,&quot;buildingKind&quot;:&quot;4&quot;,&quot;group&quot;:&quot;36&quot;,&quot;pfCode&quot;:&quot;13&quot;,&quot;geoCode&quot;:&quot;13102&quot;,&quot;companyId&quot;:&quot;00019100&quot;,&quot;insideBuildingNo&quot;:&quot;093300000497401&quot;,&quot;callFree&quot;:true,&quot;forwardingTelNum&quot;:&quot;048-423-6219&quot;,&quot;inquired&quot;:false},{&quot;position&quot;:5,&quot;cassetteType&quot;:&quot;NORMAL&quot;,&quot;showStaffComment&quot;:false,&quot;aggregationId&quot;:&quot;6PloZt0BrlyN9GS87izOzp&quot;,&quot;buildingId&quot;:&quot;0024527688&quot;,&quot;groupId&quot;:&quot;00003314102&quot;,&quot;buildingName&quot;:&quot;クレストシティレジデンス&quot;,&quot;buildingKind&quot;:&quot;4&quot;,&quot;group&quot;:&quot;36&quot;,&quot;pfCode&quot;:&quot;13&quot;,&quot;geoCode&quot;:&quot;13102&quot;,&quot;companyId&quot;:&quot;00019042&quot;,&quot;insideBuildingNo&quot;:&quot;r0942610-kh&quot;,&quot;callFree&quot;:true,&quot;forwardingTelNum&quot;:&quot;03-6380-6422&quot;,&quot;inquired&quot;:false},{&quot;position&quot;:6,&quot;cassetteType&quot;:&quot;NORMAL&quot;,&quot;showStaffComment&quot;:false,&quot;aggregationId&quot;:&quot;6PloZt0BrlyN9GS87izOzp&quot;,&quot;buildingId&quot;:&quot;0024531553&quot;,&quot;groupId&quot;:&quot;00003314102&quot;,&quot;buildingName&quot;:&quot;クレストシティレジデンス&quot;,&quot;buildingKind&quot;:&quot;4&quot;,&quot;group&quot;:&quot;36&quot;,&quot;pfCode&quot;:&quot;13&quot;,&quot;geoCode&quot;:&quot;13102&quot;,&quot;companyId&quot;:&quot;00013638&quot;,&quot;insideBuildingNo&quot;:&quot;2220102&quot;,&quot;callFree&quot;:true,&quot;forwardingTelNum&quot;:&quot;03-3467-2111&quot;,&quot;inquired&quot;:false}]">
+        
+    
+    <a href="https://realestate.yahoo.co.jp/used/mansion/detail_corp/b0024529285/" target="_blank" data-cl-params="_cl_link:room;_cl_position:3;" data-testid="link:cassette-room-title" data-cl_cl_index="247">
+      <div class="ListCassette2__ttl--room">
+        <h2 class="ListCassette2__ttl__txt--inner">18階 / 南西 / 70.31m<sup>2</sup> / 2LDK</h2>
+        <ul class="ListCassette2__pointUnit">
+          
+            
+    
+    
+      <li class="ListCassette2__pointUnit__list">
+        <span class="brandTagAdvantage">リフォーム</span>
+      </li>
+    
+  
+          
+        </ul>
+      </div>
+    </a>
+  
+        
+        <ul class="ListCassette2__cpList _listCassettes_6PloZt0BrlyN9GS87izOzp" data-cassette-aggregation-id="6PloZt0BrlyN9GS87izOzp">
+          
+            
+            <li class="ListCassette2__cpItem _listCassette">
+              
+    
+    <div class="ListCassette2__wrap">
+      
+      <div class="_listCassetteCheckbox"><!----><div class="ListCassette2__checkboxWrap">
+    <div class="ListCassette2__tagRequest" style="display: none;"><!----><!----></div>
+    <label class="ListCassette2__checkbox">
+      <input type="checkbox" class="brandFormCheckboxUnit" name="checkbox" data-cl-params="_cl_vmodule:staffcom;_cl_link:chkbx;_cl_position:1" data-testid="checkbox:cassette" data-cl_cl_index="1437">
+      <span class="brandFormCheckboxUnit__item"></span>
+    </label>
+  </div><!----></div>
+      <div class="ListCassette2__cnt _listCassetteContent">
+        <a class="ListCassette__linkArea _listCassetteDtlLink" href="https://realestate.yahoo.co.jp/used/mansion/detail_corp/b0024529285/" target="_blank" data-cl-params="_cl_vmodule:staffcom_imp;_cl_link:0024529285;_cl_position:1" data-testid="link:cassette-dtl" data-cl_cl_index="248"></a>
+        <div class="ListCassette2__summary--cntInner">
+          <div class="ListCassette2__imgMWrap">
+            <div class="ListCassette2__imgM">
+              <span class="ListCassette2__imgM__innerFit">
+                
+    
+    
+    <picture>
+      
+        
+        <source type="image/webp" srcset="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2452/9285/0002/b3130a9558298970149dc16dfecdd66f_02_01.jpg?nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=210&amp;h=210&amp;fmt=webp 1x, https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2452/9285/0002/b3130a9558298970149dc16dfecdd66f_02_01.jpg?nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=420&amp;h=420&amp;fmt=webp 2x">
+      
+      <img class="ListCassette2__imgM__innerFit__img" alt="（間取り図）" src="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2452/9285/0002/b3130a9558298970149dc16dfecdd66f_02_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=210&amp;h=210" srcset="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2452/9285/0002/b3130a9558298970149dc16dfecdd66f_02_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=210&amp;h=210&amp;fmt=jpeg 1x, https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2452/9285/0002/b3130a9558298970149dc16dfecdd66f_02_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=420&amp;h=420&amp;fmt=jpeg 2x" loading="lazy">
+    </picture>
+  
+              </span>
+            </div>
+            <div class="ListCassette2__imgM__txt">画像<span class="ListCassette2__imgM__txt__emp">19</span>枚
+            </div>
+          </div>
+          <ul class="ListCassette2__info">
+            <li class="ListCassette2__info__price">
+              1億4,500万円
+              
+            </li>
+            <li class="ListCassette2__info__cnt">
+              <ul class="ListCassette2__pointUnit">
+                
+                  
+    
+    
+      <li class="ListCassette2__pointUnit__list">
+        <span class="ListCassette2__pointUnit__tagCampaign TagCampaign">成約でもらえる</span>
+      </li>
+    
+  
+                
+              </ul>
+            </li>
+            <li class="ListCassette2__info__rcm">
+              <div class="ListCassette2__summary--rcmInner">
+                <div class="ListCassette2__imgS">
+                  <span class="ListCassette2__imgS__inner">
+                    
+    
+    
+    <picture>
+      
+        
+        <source type="image/webp" srcset="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/shop_image/99/0002/6420/0001/d2403abf4bc2a67c0c854bc53e83a998_00_01.jpg?nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=50&amp;h=50&amp;fmt=webp 1x, https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/shop_image/99/0002/6420/0001/d2403abf4bc2a67c0c854bc53e83a998_00_01.jpg?nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=100&amp;h=100&amp;fmt=webp 2x">
+      
+      <img class="ListCassette2__imgS__inner__item" alt="人物画像" src="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/shop_image/99/0002/6420/0001/d2403abf4bc2a67c0c854bc53e83a998_00_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=50&amp;h=50" srcset="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/shop_image/99/0002/6420/0001/d2403abf4bc2a67c0c854bc53e83a998_00_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=50&amp;h=50&amp;fmt=jpeg 1x, https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/shop_image/99/0002/6420/0001/d2403abf4bc2a67c0c854bc53e83a998_00_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=100&amp;h=100&amp;fmt=jpeg 2x" loading="lazy">
+    </picture>
+  
+                  </span>
+                </div>
+                <ul class="ListCassette2__info">
+                  <li class="ListCassette2__info__ttl">
+                    <span class="ListCassette2__info__ttl__emp">おすすめポイント</span>
+                    濱辺 雄太
+                  </li>
+                  <li class="ListCassette2__info__txt">『クレストシティレジデンス』最上階・南西向きにつき陽当り・眺望良好アウトフレーム工法で家具配置もスムーズ コンシェルジュや警備員が日々の安心をサポート リビングには足元から暖める床暖房を装備しました 開放感のある対面式キッチンには3口コンロを設置 ウォークインクローゼット有り！収納にゆとりを持てます 24時間換気システムなど生活を豊かにする設備が充実 ペット可！動物と触れ合いながら暮らせる住まい～東京、川崎エリアの「住まい」探しに確かな安心と満足を～ 東宝ハウス大田東京ならではの高品質なサービスをお届けします。各種ご相談も承っております。 住宅ローンのご相談 FPによるライフプランのシミュレーションお電話よりお問い合わせの際は「Yahoo！不動産を見た」とお伝え下さい。【資料をもらう】【室内・現地を見学する】ボタンよりご予約いただくとご見学がスムーズにご案内できます。お客様のお住まいへの「希望」を形にするべく全力でお手伝いさせていただきます。お会いできる日を心待ちにしております。</li>
+                </ul>
+              </div>
+            </li>
+            <li class="ListCassette2__info__companyInfoWrap">
+              <div class="ListCassette2__companyInfo">
+                
+                <span class="TagContractPlus2 TagContractPlus2--silver">シルバー推奨店</span>
+                <span class="ListCassette2__info__cpName">株式会社東宝ハウス大田東京　営業2課</span>
+              </div>
+              
+              
+    
+    <a href="https://realestate.yahoo.co.jp/used/mansion/detail_corp/b0024529285/#shopReview" class="CompanyReview__listCassetteWrap" target="_blank" rel="noopener noreferrer" data-cl-params="_cl_link:review;_cl_position:00026420" data-testid="link:cassette-review" data-cl_cl_index="249">
+      
+      <div class="CompanyScoreStars">
+        <ol class="CompanyScoreStars__list" aria-label="5点満点中5.0点">
+          
+                <li class="CompanyScoreStars__listStarXsmall"></li>
+              
+                <li class="CompanyScoreStars__listStarXsmall"></li>
+              
+                <li class="CompanyScoreStars__listStarXsmall"></li>
+              
+                <li class="CompanyScoreStars__listStarXsmall"></li>
+              
+                <li class="CompanyScoreStars__listStarXsmall"></li>
+              
+              
+              
+        </ol>
+        <p class="CompanyScoreStars__pointSmall">5.0</p>
+      </div>
+      <!-- /.CompanyScoreStars -->
+      <div class="CompanyReview__reviewLinkDefault">
+        <svg class="svg--commentleader--1a75ff CompanyReview__countIcon" role="none">
+          <use xlink:href="#svg--commentleader--1a75ff"></use>
+        </svg>
+        <span class="CompanyReview__titleLinkSmall">不動産会社レビュー
+          7件</span>
+      </div>
+    </a>
+  
+              <div class="ListCassette2__contact">
+                <div class="ListCassette2__contact__phone">
+                  <svg class="svg--phone ListCassette2__contact__phone__icon" role="img" aria-label="電話番号">
+                    <use xlink:href="#svg--phone"></use>
+                  </svg>
+                  <span class="ListCassette2__contact__phone__number">0078-6014-57201</span>
+                  
+                  <div class="_listCassettePhoneQuestionIcon"><!----><div class="ListCassette2__contact__qLink">
+      <span class="ListCassette2__contact__qLink__link" data-testid="button:cassette-phone-quest">
+        <svg class="svg--questionCircle--neutral70 ListCassette2__contact__qLink__icon">
+          <use xlink:href="#svg--questionCircle--neutral70"></use>
+        </svg>
+      </span> 
+    </div><!----></div>
+                </div>
+                <ul class="ListCassette2__contact__btnWrp">
+                  <li class="ListCassette2__contact__btnWrp__itemInquiry">
+                    <button class="ListCassette2__contact__btnInquiry _listCassetteInquiryInfoButton" type="button" data-cl-params="_cl_vmodule:staffcom;_cl_link:req;_cl_position:1" data-href="https://realestate.yahoo.co.jp/used/inquiry/info/?req=b0024529285" data-target="_blank" data-testid="button:cassette-inquiry" data-cl_cl_index="250">資料をもらう<span class="ListCassette2__contact__btnInquiry__tagFree brandTagFree">無料</span></button>
+                  </li>
+                  
+                  <li class="ListCassette2__contact__btnWrp__item _listCassetteFavoriteButton"><!----><button type="button" class="ListCassette2__contact__btnFavorite" style="" aria-label="お気に入りに追加" data-cl-params="_cl_vmodule:staffcom;_cl_link:add;_cl_position:1" data-testid="button:cassette-favorite" data-cl_cl_index="1438">
+    <span class="brandIcon__likeL"></span>
+  </button><!----></li>
+                </ul>
+              </div>
+              <!--/.ListCassette2__contact-->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+            </li>
+          
+            
+            <li class="ListCassette2__cpItem _listCassette" style="display: none">
+              
+    
+    <div class="ListCassette2__wrap">
+      
+      <div class="_listCassetteCheckbox"><!----><div class="ListCassette2__checkboxWrap">
+    <div class="ListCassette2__tagRequest" style="display: none;"><!----><!----></div>
+    <label class="ListCassette2__checkbox">
+      <input type="checkbox" class="brandFormCheckboxUnit" name="checkbox" data-cl-params="_cl_vmodule:staffcom;_cl_link:chkbx;_cl_position:2" data-testid="checkbox:cassette" data-cl_cl_index="1439">
+      <span class="brandFormCheckboxUnit__item"></span>
+    </label>
+  </div><!----></div>
+      <div class="ListCassette2__cnt _listCassetteContent">
+        <a class="ListCassette__linkArea _listCassetteDtlLink" href="https://realestate.yahoo.co.jp/used/mansion/detail_corp/b0024586742/" target="_blank" data-cl-params="_cl_vmodule:staffcom_imp;_cl_link:0024586742;_cl_position:2" data-testid="link:cassette-dtl" data-cl_cl_index="252"></a>
+        <div class="ListCassette2__summary--cntInner">
+          <div class="ListCassette2__imgMWrap">
+            <div class="ListCassette2__imgM">
+              <span class="ListCassette2__imgM__innerFit">
+                
+    
+    
+    <picture>
+      
+        
+        <source type="image/webp" srcset="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2458/6742/0001/950df95cfe5799097834b917a721cf97_02_01.jpg?nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=210&amp;h=210&amp;fmt=webp 1x, https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2458/6742/0001/950df95cfe5799097834b917a721cf97_02_01.jpg?nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=420&amp;h=420&amp;fmt=webp 2x">
+      
+      <img class="ListCassette2__imgM__innerFit__img" alt="クレストシティレジデンス" src="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2458/6742/0001/950df95cfe5799097834b917a721cf97_02_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=210&amp;h=210" srcset="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2458/6742/0001/950df95cfe5799097834b917a721cf97_02_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=210&amp;h=210&amp;fmt=jpeg 1x, https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2458/6742/0001/950df95cfe5799097834b917a721cf97_02_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=420&amp;h=420&amp;fmt=jpeg 2x" loading="lazy">
+    </picture>
+  
+              </span>
+            </div>
+            <div class="ListCassette2__imgM__txt">画像<span class="ListCassette2__imgM__txt__emp">1</span>枚
+            </div>
+          </div>
+          <ul class="ListCassette2__info">
+            <li class="ListCassette2__info__price">
+              1億4,500万円
+              
+            </li>
+            <li class="ListCassette2__info__cnt">
+              <ul class="ListCassette2__pointUnit">
+                
+                  
+    
+    
+      <li class="ListCassette2__pointUnit__list">
+        <span class="ListCassette2__pointUnit__tagCampaign TagCampaign">成約でもらえる</span>
+      </li>
+    
+  
+                
+              </ul>
+            </li>
+            <li class="ListCassette2__info__rcm">
+              <div class="ListCassette2__summary--rcmInner">
+                <div class="ListCassette2__imgS">
+                  <span class="ListCassette2__imgS__inner">
+                    
+    
+    
+    <picture>
+      
+        
+        <source type="image/webp" srcset="https://s.yimg.jp/images/realestate/pc/img/used/50x50_2x_point_noimage.png?nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=50&amp;h=50&amp;fmt=webp 1x, https://s.yimg.jp/images/realestate/pc/img/used/50x50_2x_point_noimage.png?nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=100&amp;h=100&amp;fmt=webp 2x">
+      
+      <img class="ListCassette2__imgS__inner__item" alt="人物画像" src="https://s.yimg.jp/images/realestate/pc/img/used/50x50_2x_point_noimage.png?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=50&amp;h=50" srcset="https://s.yimg.jp/images/realestate/pc/img/used/50x50_2x_point_noimage.png?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=50&amp;h=50&amp;fmt=jpeg 1x, https://s.yimg.jp/images/realestate/pc/img/used/50x50_2x_point_noimage.png?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=100&amp;h=100&amp;fmt=jpeg 2x" loading="lazy">
+    </picture>
+  
+                  </span>
+                </div>
+                <ul class="ListCassette2__info">
+                  <li class="ListCassette2__info__ttl">
+                    <span class="ListCassette2__info__ttl__emp">おすすめポイント</span>
+                    
+                  </li>
+                  <li class="ListCassette2__info__txt">■頭金0円からのご購入可能です■（諸費用もOK）【東宝ハウス東京】提携住宅ローン×低金利×保障付帯【Yahoo！ 不動産キャンペーン対象店舗】当店で物件を成約するとPayPayボーナスライトがもらえる「Yahoo！ 不動産 物件ご成約キャンペーン」の対象になります。「資料をもらう」「見学予約をする」ボタンからお問い合わせください。※必ずYahoo！ JAPAN IDでログインしてください。※PayPayボーナスライトは出金と譲渡はできません。ご案内・詳細な資料のご請求はお気軽にどうぞ♪お電話でのお問い合わせも常時受け付けております！お気軽にお問い合わせください。</li>
+                </ul>
+              </div>
+            </li>
+            <li class="ListCassette2__info__companyInfoWrap">
+              <div class="ListCassette2__companyInfo">
+                
+                <span class="TagContractPlus2 TagContractPlus2--silver">シルバー推奨店</span>
+                <span class="ListCassette2__info__cpName">株式会社東宝ハウス東京</span>
+              </div>
+              
+              
+    
+    <a href="https://realestate.yahoo.co.jp/used/mansion/detail_corp/b0024586742/#shopReview" class="CompanyReview__listCassetteWrap" target="_blank" rel="noopener noreferrer" data-cl-params="_cl_link:review;_cl_position:00026192" data-testid="link:cassette-review" data-cl_cl_index="253">
+      
+      <div class="CompanyScoreStars">
+        <ol class="CompanyScoreStars__list" aria-label="5点満点中-.--点">
+          
+              
+              
+                <li class="CompanyScoreStars__listStarXsmall--empty"></li>
+              
+                <li class="CompanyScoreStars__listStarXsmall--empty"></li>
+              
+                <li class="CompanyScoreStars__listStarXsmall--empty"></li>
+              
+                <li class="CompanyScoreStars__listStarXsmall--empty"></li>
+              
+                <li class="CompanyScoreStars__listStarXsmall--empty"></li>
+              
+        </ol>
+        <p class="CompanyScoreStars__pointSmall">-.--</p>
+      </div>
+      <!-- /.CompanyScoreStars -->
+      <div class="CompanyReview__reviewLinkDefault">
+        <svg class="svg--commentleader--1a75ff CompanyReview__countIcon" role="none">
+          <use xlink:href="#svg--commentleader--1a75ff"></use>
+        </svg>
+        <span class="CompanyReview__titleLinkSmall">不動産会社レビュー
+          2件</span>
+      </div>
+    </a>
+  
+              <div class="ListCassette2__contact">
+                <div class="ListCassette2__contact__phone">
+                  <svg class="svg--phone ListCassette2__contact__phone__icon" role="img" aria-label="電話番号">
+                    <use xlink:href="#svg--phone"></use>
+                  </svg>
+                  <span class="ListCassette2__contact__phone__number">0078-6014-56199</span>
+                  
+                  <div class="_listCassettePhoneQuestionIcon"><!----><div class="ListCassette2__contact__qLink">
+      <span class="ListCassette2__contact__qLink__link" data-testid="button:cassette-phone-quest">
+        <svg class="svg--questionCircle--neutral70 ListCassette2__contact__qLink__icon">
+          <use xlink:href="#svg--questionCircle--neutral70"></use>
+        </svg>
+      </span> 
+    </div><!----></div>
+                </div>
+                <ul class="ListCassette2__contact__btnWrp">
+                  <li class="ListCassette2__contact__btnWrp__itemInquiry">
+                    <button class="ListCassette2__contact__btnInquiry _listCassetteInquiryInfoButton" type="button" data-cl-params="_cl_vmodule:staffcom;_cl_link:req;_cl_position:2" data-href="https://realestate.yahoo.co.jp/used/inquiry/info/?req=b0024586742" data-target="_blank" data-testid="button:cassette-inquiry" data-cl_cl_index="254">資料をもらう<span class="ListCassette2__contact__btnInquiry__tagFree brandTagFree">無料</span></button>
+                  </li>
+                  
+                  <li class="ListCassette2__contact__btnWrp__item _listCassetteFavoriteButton"><!----><button type="button" class="ListCassette2__contact__btnFavorite" style="" aria-label="お気に入りに追加" data-cl-params="_cl_vmodule:staffcom;_cl_link:add;_cl_position:2" data-testid="button:cassette-favorite" data-cl_cl_index="1440">
+    <span class="brandIcon__likeL"></span>
+  </button><!----></li>
+                </ul>
+              </div>
+              <!--/.ListCassette2__contact-->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+            </li>
+          
+            
+            <li class="ListCassette2__cpItem _listCassette" style="display: none">
+              
+    
+    <div class="ListCassette2__wrap">
+      
+      <div class="_listCassetteCheckbox"><!----><div class="ListCassette2__checkboxWrap">
+    <div class="ListCassette2__tagRequest" style="display: none;"><!----><!----></div>
+    <label class="ListCassette2__checkbox">
+      <input type="checkbox" class="brandFormCheckboxUnit" name="checkbox" data-cl-params="_cl_vmodule:staffcom;_cl_link:chkbx;_cl_position:3" data-testid="checkbox:cassette" data-cl_cl_index="1441">
+      <span class="brandFormCheckboxUnit__item"></span>
+    </label>
+  </div><!----></div>
+      <div class="ListCassette2__cnt _listCassetteContent">
+        <a class="ListCassette__linkArea _listCassetteDtlLink" href="https://realestate.yahoo.co.jp/used/mansion/detail_corp/b0024544406/" target="_blank" data-cl-params="_cl_vmodule:staffcom_imp;_cl_link:0024544406;_cl_position:3" data-testid="link:cassette-dtl" data-cl_cl_index="256"></a>
+        <div class="ListCassette2__summary--cntInner">
+          <div class="ListCassette2__imgMWrap">
+            <div class="ListCassette2__imgM">
+              <span class="ListCassette2__imgM__innerFit">
+                
+    
+    
+    <picture>
+      
+        
+        <source type="image/webp" srcset="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2454/4406/0014/21f51b2e5ca3e8ac94f1ed35104428d2_02_01.jpg?nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=210&amp;h=210&amp;fmt=webp 1x, https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2454/4406/0014/21f51b2e5ca3e8ac94f1ed35104428d2_02_01.jpg?nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=420&amp;h=420&amp;fmt=webp 2x">
+      
+      <img class="ListCassette2__imgM__innerFit__img" alt="間取りは専有面積70.31平米の2LDK。バルコニー面積は9.7平米です。" src="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2454/4406/0014/21f51b2e5ca3e8ac94f1ed35104428d2_02_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=210&amp;h=210" srcset="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2454/4406/0014/21f51b2e5ca3e8ac94f1ed35104428d2_02_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=210&amp;h=210&amp;fmt=jpeg 1x, https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2454/4406/0014/21f51b2e5ca3e8ac94f1ed35104428d2_02_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=420&amp;h=420&amp;fmt=jpeg 2x" loading="lazy">
+    </picture>
+  
+              </span>
+            </div>
+            <div class="ListCassette2__imgM__txt">画像<span class="ListCassette2__imgM__txt__emp">22</span>枚
+            </div>
+          </div>
+          <ul class="ListCassette2__info">
+            <li class="ListCassette2__info__price">
+              1億4,500万円
+              
+            </li>
+            <li class="ListCassette2__info__cnt">
+              <ul class="ListCassette2__pointUnit">
+                
+                  
+    
+    
+      <li class="ListCassette2__pointUnit__list">
+        <span class="ListCassette2__pointUnit__tagCampaign TagCampaign">成約でもらえる</span>
+      </li>
+    
+  
+                
+              </ul>
+            </li>
+            <li class="ListCassette2__info__rcm">
+              <div class="ListCassette2__summary--rcmInner">
+                <div class="ListCassette2__imgS">
+                  <span class="ListCassette2__imgS__inner">
+                    
+    
+    
+    <picture>
+      
+        
+        <source type="image/webp" srcset="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/shop_image/99/0002/3442/0023/e550759cbd59b1702888fe7b30299631_00_01.jpg?nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=50&amp;h=50&amp;fmt=webp 1x, https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/shop_image/99/0002/3442/0023/e550759cbd59b1702888fe7b30299631_00_01.jpg?nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=100&amp;h=100&amp;fmt=webp 2x">
+      
+      <img class="ListCassette2__imgS__inner__item" alt="人物画像" src="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/shop_image/99/0002/3442/0023/e550759cbd59b1702888fe7b30299631_00_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=50&amp;h=50" srcset="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/shop_image/99/0002/3442/0023/e550759cbd59b1702888fe7b30299631_00_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=50&amp;h=50&amp;fmt=jpeg 1x, https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/shop_image/99/0002/3442/0023/e550759cbd59b1702888fe7b30299631_00_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=100&amp;h=100&amp;fmt=jpeg 2x" loading="lazy">
+    </picture>
+  
+                  </span>
+                </div>
+                <ul class="ListCassette2__info">
+                  <li class="ListCassette2__info__ttl">
+                    <span class="ListCassette2__info__ttl__emp">おすすめポイント</span>
+                    高橋 未来
+                  </li>
+                  <li class="ListCassette2__info__txt">◆都営大江戸線「勝どき」駅まで徒歩約8分と便利な立地◆上階からの物音を気にすることなく過ごせる最上階◆全居室5帖以上のゆとりある2LDK◆各居室を始め各所に収納のあるすっきりが叶うレイアウト◆たっぷり収納できるWIC付きで、衣替えが不要に！◆大切な家族の一員、ペットと暮らせるマンション（細則有）◆24時間有人管理＋オートロック！セキュリティに配慮されています！◆不在がちな方の心強い味方、宅配ボックス利用可◆柱が少なく家具の配置のしやすいアウトフレーム工法◆「マルエツ 勝どき六丁目店」まで徒歩約3分！【営業時間 10:00～19:00】上記時間はお電話が繋がりやすくなっております。お気軽にご連絡下さい！現地を見学される場合はご見学予約ボタンよりご希望の日時をご記入いただけますとスムーズにご案内が可能です。**住宅ローン**諸費用込融資や築年数の古い物件のローンも得意としており、最適な銀行をご提案します。**リフォーム**理想の間取り、テイストを作り上げられます！リフォームプランナーの同行も可能です。</li>
+                </ul>
+              </div>
+            </li>
+            <li class="ListCassette2__info__companyInfoWrap">
+              <div class="ListCassette2__companyInfo">
+                
+                <span class="TagContractPlus2 TagContractPlus2--bronze">ブロンズ推奨店</span>
+                <span class="ListCassette2__info__cpName">株式会社ウィル　恵比寿営業所</span>
+              </div>
+              
+              
+    
+    <a href="https://realestate.yahoo.co.jp/used/mansion/detail_corp/b0024544406/#shopReview" class="CompanyReview__listCassetteWrap" target="_blank" rel="noopener noreferrer" data-cl-params="_cl_link:review;_cl_position:00023442" data-testid="link:cassette-review" data-cl_cl_index="257">
+      
+      <div class="CompanyScoreStars">
+        <ol class="CompanyScoreStars__list" aria-label="5点満点中-.--点">
+          
+              
+              
+                <li class="CompanyScoreStars__listStarXsmall--empty"></li>
+              
+                <li class="CompanyScoreStars__listStarXsmall--empty"></li>
+              
+                <li class="CompanyScoreStars__listStarXsmall--empty"></li>
+              
+                <li class="CompanyScoreStars__listStarXsmall--empty"></li>
+              
+                <li class="CompanyScoreStars__listStarXsmall--empty"></li>
+              
+        </ol>
+        <p class="CompanyScoreStars__pointSmall">-.--</p>
+      </div>
+      <!-- /.CompanyScoreStars -->
+      <div class="CompanyReview__reviewLinkDefault">
+        <svg class="svg--commentleader--1a75ff CompanyReview__countIcon" role="none">
+          <use xlink:href="#svg--commentleader--1a75ff"></use>
+        </svg>
+        <span class="CompanyReview__titleLinkSmall">不動産会社レビュー
+          2件</span>
+      </div>
+    </a>
+  
+              <div class="ListCassette2__contact">
+                <div class="ListCassette2__contact__phone">
+                  <svg class="svg--phone ListCassette2__contact__phone__icon" role="img" aria-label="電話番号">
+                    <use xlink:href="#svg--phone"></use>
+                  </svg>
+                  <span class="ListCassette2__contact__phone__number">0078-6014-52834</span>
+                  
+                  <div class="_listCassettePhoneQuestionIcon"><!----><div class="ListCassette2__contact__qLink">
+      <span class="ListCassette2__contact__qLink__link" data-testid="button:cassette-phone-quest">
+        <svg class="svg--questionCircle--neutral70 ListCassette2__contact__qLink__icon">
+          <use xlink:href="#svg--questionCircle--neutral70"></use>
+        </svg>
+      </span> 
+    </div><!----></div>
+                </div>
+                <ul class="ListCassette2__contact__btnWrp">
+                  <li class="ListCassette2__contact__btnWrp__itemInquiry">
+                    <button class="ListCassette2__contact__btnInquiry _listCassetteInquiryInfoButton" type="button" data-cl-params="_cl_vmodule:staffcom;_cl_link:req;_cl_position:3" data-href="https://realestate.yahoo.co.jp/used/inquiry/info/?req=b0024544406" data-target="_blank" data-testid="button:cassette-inquiry" data-cl_cl_index="258">資料をもらう<span class="ListCassette2__contact__btnInquiry__tagFree brandTagFree">無料</span></button>
+                  </li>
+                  
+                  <li class="ListCassette2__contact__btnWrp__item _listCassetteFavoriteButton"><!----><button type="button" class="ListCassette2__contact__btnFavorite" style="" aria-label="お気に入りに追加" data-cl-params="_cl_vmodule:staffcom;_cl_link:add;_cl_position:3" data-testid="button:cassette-favorite" data-cl_cl_index="1442">
+    <span class="brandIcon__likeL"></span>
+  </button><!----></li>
+                </ul>
+              </div>
+              <!--/.ListCassette2__contact-->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+            </li>
+          
+            
+            <li class="ListCassette2__cpItem _listCassette" style="display: none">
+              
+    
+    <div class="ListCassette2__wrap">
+      
+      <div class="_listCassetteCheckbox"><!----><div class="ListCassette2__checkboxWrap">
+    <div class="ListCassette2__tagRequest" style="display: none;"><!----><!----></div>
+    <label class="ListCassette2__checkbox">
+      <input type="checkbox" class="brandFormCheckboxUnit" name="checkbox" data-cl-params="_cl_vmodule:est_list;_cl_link:chkbx;_cl_position:4" data-testid="checkbox:cassette" data-cl_cl_index="1443">
+      <span class="brandFormCheckboxUnit__item"></span>
+    </label>
+  </div><!----></div>
+      <div class="ListCassette2__cnt _listCassetteContent">
+        <a class="ListCassette__linkArea _listCassetteDtlLink" href="https://realestate.yahoo.co.jp/used/mansion/detail_corp/b0024557732/" target="_blank" data-cl-params="_cl_vmodule:est_list_imp;_cl_link:0024557732;_cl_position:4" data-testid="link:cassette-dtl" data-cl_cl_index="260"></a>
+        <div class="ListCassette2__summary--cntInner">
+          <div class="ListCassette2__imgMWrap">
+            <div class="ListCassette2__imgM">
+              <span class="ListCassette2__imgM__innerFit">
+                
+    
+    
+    <picture>
+      
+        
+        <source type="image/webp" srcset="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2455/7732/0011/5eab9a856776ba8edfc67d8001c00e2f_02_01.jpg?nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=210&amp;h=210&amp;fmt=webp 1x, https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2455/7732/0011/5eab9a856776ba8edfc67d8001c00e2f_02_01.jpg?nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=420&amp;h=420&amp;fmt=webp 2x">
+      
+      <img class="ListCassette2__imgM__innerFit__img" src="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2455/7732/0011/5eab9a856776ba8edfc67d8001c00e2f_02_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=210&amp;h=210" srcset="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2455/7732/0011/5eab9a856776ba8edfc67d8001c00e2f_02_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=210&amp;h=210&amp;fmt=jpeg 1x, https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2455/7732/0011/5eab9a856776ba8edfc67d8001c00e2f_02_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=420&amp;h=420&amp;fmt=jpeg 2x" loading="lazy">
+    </picture>
+  
+              </span>
+            </div>
+            <div class="ListCassette2__imgM__txt">画像<span class="ListCassette2__imgM__txt__emp">9</span>枚
+            </div>
+          </div>
+          <ul class="ListCassette2__info">
+            <li class="ListCassette2__info__price">
+              1億4,500万円
+              
+            </li>
+            <li class="ListCassette2__info__cnt">
+              <ul class="ListCassette2__pointUnit">
+                
+                  
+    
+    
+      <li class="ListCassette2__pointUnit__list">
+        <span class="ListCassette2__pointUnit__tagCampaign TagCampaign">成約でもらえる</span>
+      </li>
+    
+  
+                
+              </ul>
+            </li>
+            
+            <li class="ListCassette2__info__companyInfoWrap">
+              <div class="ListCassette2__companyInfo">
+                
+                
+                <span class="ListCassette2__info__cpName">株式会社スターフォレスト　六本木店</span>
+              </div>
+              
+              
+              <div class="ListCassette2__contact">
+                <div class="ListCassette2__contact__phone">
+                  <svg class="svg--phone ListCassette2__contact__phone__icon" role="img" aria-label="電話番号">
+                    <use xlink:href="#svg--phone"></use>
+                  </svg>
+                  <span class="ListCassette2__contact__phone__number">0078-6014-55004</span>
+                  
+                  <div class="_listCassettePhoneQuestionIcon"><!----><div class="ListCassette2__contact__qLink">
+      <span class="ListCassette2__contact__qLink__link" data-testid="button:cassette-phone-quest">
+        <svg class="svg--questionCircle--neutral70 ListCassette2__contact__qLink__icon">
+          <use xlink:href="#svg--questionCircle--neutral70"></use>
+        </svg>
+      </span> 
+    </div><!----></div>
+                </div>
+                <ul class="ListCassette2__contact__btnWrp">
+                  <li class="ListCassette2__contact__btnWrp__itemInquiry">
+                    <button class="ListCassette2__contact__btnInquiry _listCassetteInquiryInfoButton" type="button" data-cl-params="_cl_vmodule:est_list;_cl_link:req;_cl_position:4" data-href="https://realestate.yahoo.co.jp/used/inquiry/info/?req=b0024557732" data-target="_blank" data-testid="button:cassette-inquiry" data-cl_cl_index="261">資料をもらう<span class="ListCassette2__contact__btnInquiry__tagFree brandTagFree">無料</span></button>
+                  </li>
+                  
+                  <li class="ListCassette2__contact__btnWrp__item _listCassetteFavoriteButton"><!----><button type="button" class="ListCassette2__contact__btnFavorite" style="" aria-label="お気に入りに追加" data-cl-params="_cl_vmodule:est_list;_cl_link:add;_cl_position:4" data-testid="button:cassette-favorite" data-cl_cl_index="1444">
+    <span class="brandIcon__likeL"></span>
+  </button><!----></li>
+                </ul>
+              </div>
+              <!--/.ListCassette2__contact-->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+            </li>
+          
+            
+            <li class="ListCassette2__cpItem _listCassette" style="display: none">
+              
+    
+    <div class="ListCassette2__wrap">
+      
+      <div class="_listCassetteCheckbox"><!----><div class="ListCassette2__checkboxWrap">
+    <div class="ListCassette2__tagRequest" style="display: none;"><!----><!----></div>
+    <label class="ListCassette2__checkbox">
+      <input type="checkbox" class="brandFormCheckboxUnit" name="checkbox" data-cl-params="_cl_vmodule:est_list;_cl_link:chkbx;_cl_position:5" data-testid="checkbox:cassette" data-cl_cl_index="1445">
+      <span class="brandFormCheckboxUnit__item"></span>
+    </label>
+  </div><!----></div>
+      <div class="ListCassette2__cnt _listCassetteContent">
+        <a class="ListCassette__linkArea _listCassetteDtlLink" href="https://realestate.yahoo.co.jp/used/mansion/detail_corp/b0024527688/" target="_blank" data-cl-params="_cl_vmodule:est_list_imp;_cl_link:0024527688;_cl_position:5" data-testid="link:cassette-dtl" data-cl_cl_index="263"></a>
+        <div class="ListCassette2__summary--cntInner">
+          <div class="ListCassette2__imgMWrap">
+            <div class="ListCassette2__imgM">
+              <span class="ListCassette2__imgM__innerFit">
+                
+    
+    
+    <picture>
+      
+        
+        <source type="image/webp" srcset="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2452/7688/0002/42fc49e4975b886c5edef9bdfba96234_00_01.jpg?nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=210&amp;h=210&amp;fmt=webp 1x, https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2452/7688/0002/42fc49e4975b886c5edef9bdfba96234_00_01.jpg?nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=420&amp;h=420&amp;fmt=webp 2x">
+      
+      <img class="ListCassette2__imgM__innerFit__img" src="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2452/7688/0002/42fc49e4975b886c5edef9bdfba96234_00_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=210&amp;h=210" srcset="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2452/7688/0002/42fc49e4975b886c5edef9bdfba96234_00_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=210&amp;h=210&amp;fmt=jpeg 1x, https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2452/7688/0002/42fc49e4975b886c5edef9bdfba96234_00_01.jpg?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=420&amp;h=420&amp;fmt=jpeg 2x" loading="lazy">
+    </picture>
+  
+              </span>
+            </div>
+            <div class="ListCassette2__imgM__txt">画像<span class="ListCassette2__imgM__txt__emp">5</span>枚
+            </div>
+          </div>
+          <ul class="ListCassette2__info">
+            <li class="ListCassette2__info__price">
+              1億5,000万円
+              
+            </li>
+            <li class="ListCassette2__info__cnt">
+              <ul class="ListCassette2__pointUnit">
+                
+              </ul>
+            </li>
+            
+            <li class="ListCassette2__info__companyInfoWrap">
+              <div class="ListCassette2__companyInfo">
+                
+                
+                <span class="ListCassette2__info__cpName">不動産投資TOKYOリスタイル　ストレイトライド株式会社</span>
+              </div>
+              
+              
+              <div class="ListCassette2__contact">
+                <div class="ListCassette2__contact__phone">
+                  <svg class="svg--phone ListCassette2__contact__phone__icon" role="img" aria-label="電話番号">
+                    <use xlink:href="#svg--phone"></use>
+                  </svg>
+                  <span class="ListCassette2__contact__phone__number">0078-6014-54956</span>
+                  
+                  <div class="_listCassettePhoneQuestionIcon"><!----><div class="ListCassette2__contact__qLink">
+      <span class="ListCassette2__contact__qLink__link" data-testid="button:cassette-phone-quest">
+        <svg class="svg--questionCircle--neutral70 ListCassette2__contact__qLink__icon">
+          <use xlink:href="#svg--questionCircle--neutral70"></use>
+        </svg>
+      </span> 
+    </div><!----></div>
+                </div>
+                <ul class="ListCassette2__contact__btnWrp">
+                  <li class="ListCassette2__contact__btnWrp__itemInquiry">
+                    <button class="ListCassette2__contact__btnInquiry _listCassetteInquiryInfoButton" type="button" data-cl-params="_cl_vmodule:est_list;_cl_link:req;_cl_position:5" data-href="https://realestate.yahoo.co.jp/used/inquiry/info/?req=b0024527688" data-target="_blank" data-testid="button:cassette-inquiry" data-cl_cl_index="264">資料をもらう<span class="ListCassette2__contact__btnInquiry__tagFree brandTagFree">無料</span></button>
+                  </li>
+                  
+                  <li class="ListCassette2__contact__btnWrp__item _listCassetteFavoriteButton"><!----><button type="button" class="ListCassette2__contact__btnFavorite" style="" aria-label="お気に入りに追加" data-cl-params="_cl_vmodule:est_list;_cl_link:add;_cl_position:5" data-testid="button:cassette-favorite" data-cl_cl_index="1446">
+    <span class="brandIcon__likeL"></span>
+  </button><!----></li>
+                </ul>
+              </div>
+              <!--/.ListCassette2__contact-->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+            </li>
+          
+            
+            <li class="ListCassette2__cpItem _listCassette" style="display: none">
+              
+    
+    <div class="ListCassette2__wrap">
+      
+      <div class="_listCassetteCheckbox"><!----><div class="ListCassette2__checkboxWrap">
+    <div class="ListCassette2__tagRequest" style="display: none;"><!----><!----></div>
+    <label class="ListCassette2__checkbox">
+      <input type="checkbox" class="brandFormCheckboxUnit" name="checkbox" data-cl-params="_cl_vmodule:est_list;_cl_link:chkbx;_cl_position:6" data-testid="checkbox:cassette" data-cl_cl_index="1447">
+      <span class="brandFormCheckboxUnit__item"></span>
+    </label>
+  </div><!----></div>
+      <div class="ListCassette2__cnt _listCassetteContent">
+        <a class="ListCassette__linkArea _listCassetteDtlLink" href="https://realestate.yahoo.co.jp/used/mansion/detail_corp/b0024531553/" target="_blank" data-cl-params="_cl_vmodule:est_list_imp;_cl_link:0024531553;_cl_position:6" data-testid="link:cassette-dtl" data-cl_cl_index="266"></a>
+        <div class="ListCassette2__summary--cntInner">
+          <div class="ListCassette2__imgMWrap">
+            <div class="ListCassette2__imgM">
+              <span class="ListCassette2__imgM__innerFit">
+                
+    
+    
+    <picture>
+      
+        
+        <source type="image/webp" srcset="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2453/1553/0016/e87459cc5b20d69e2ce9b9e3e1982770_02_01.gif?nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=210&amp;h=210&amp;fmt=webp 1x, https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2453/1553/0016/e87459cc5b20d69e2ce9b9e3e1982770_02_01.gif?nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=420&amp;h=420&amp;fmt=webp 2x">
+      
+      <img class="ListCassette2__imgM__innerFit__img" alt="間取り図" src="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2453/1553/0016/e87459cc5b20d69e2ce9b9e3e1982770_02_01.gif?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=210&amp;h=210" srcset="https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2453/1553/0016/e87459cc5b20d69e2ce9b9e3e1982770_02_01.gif?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=210&amp;h=210&amp;fmt=jpeg 1x, https://realestate-pctr.c.yimg.jp/ds/realestate-buy-image/bld_image/00/2453/1553/0016/e87459cc5b20d69e2ce9b9e3e1982770_02_01.gif?q=65&amp;nf_src=sy&amp;nf_path=/images/realestate/img/common/noimage/288x288.png&amp;w=420&amp;h=420&amp;fmt=jpeg 2x" loading="lazy">
+    </picture>
+  
+              </span>
+            </div>
+            <div class="ListCassette2__imgM__txt">画像<span class="ListCassette2__imgM__txt__emp">18</span>枚
+            </div>
+          </div>
+          <ul class="ListCassette2__info">
+            <li class="ListCassette2__info__price">
+              1億4,500万円
+              
+            </li>
+            <li class="ListCassette2__info__cnt">
+              <ul class="ListCassette2__pointUnit">
+                
+              </ul>
+            </li>
+            
+            <li class="ListCassette2__info__companyInfoWrap">
+              <div class="ListCassette2__companyInfo">
+                
+                
+                <span class="ListCassette2__info__cpName">住建ハウジング</span>
+              </div>
+              
+              
+              <div class="ListCassette2__contact">
+                <div class="ListCassette2__contact__phone">
+                  <svg class="svg--phone ListCassette2__contact__phone__icon" role="img" aria-label="電話番号">
+                    <use xlink:href="#svg--phone"></use>
+                  </svg>
+                  <span class="ListCassette2__contact__phone__number">0078-6014-51998</span>
+                  
+                  <div class="_listCassettePhoneQuestionIcon"><!----><div class="ListCassette2__contact__qLink">
+      <span class="ListCassette2__contact__qLink__link" data-testid="button:cassette-phone-quest">
+        <svg class="svg--questionCircle--neutral70 ListCassette2__contact__qLink__icon">
+          <use xlink:href="#svg--questionCircle--neutral70"></use>
+        </svg>
+      </span> 
+    </div><!----></div>
+                </div>
+                <ul class="ListCassette2__contact__btnWrp">
+                  <li class="ListCassette2__contact__btnWrp__itemInquiry">
+                    <button class="ListCassette2__contact__btnInquiry _listCassetteInquiryInfoButton" type="button" data-cl-params="_cl_vmodule:est_list;_cl_link:req;_cl_position:6" data-href="https://realestate.yahoo.co.jp/used/inquiry/info/?req=b0024531553" data-target="_blank" data-testid="button:cassette-inquiry" data-cl_cl_index="267">資料をもらう<span class="ListCassette2__contact__btnInquiry__tagFree brandTagFree">無料</span></button>
+                  </li>
+                  
+                  <li class="ListCassette2__contact__btnWrp__item _listCassetteFavoriteButton"><!----><button type="button" class="ListCassette2__contact__btnFavorite" style="" aria-label="お気に入りに追加" data-cl-params="_cl_vmodule:est_list;_cl_link:add;_cl_position:6" data-testid="button:cassette-favorite" data-cl_cl_index="1448">
+    <span class="brandIcon__likeL"></span>
+  </button><!----></li>
+                </ul>
+              </div>
+              <!--/.ListCassette2__contact-->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+            </li>
+          
+        </ul>
+        <span class="_listCassetteExpand"><!----> <div class="ListCassette2__toggle--close">
+    <div class="ListCassette2__toggle__cnt">
+      <a class="ListCassette2__toggle__link" data-cl-nofollow="on" data-cl-params="_cl_vmodule:staffcom;_cl_link:more_b;_cl_position:0" data-cl_cl_index="1449">
+        取り扱い不動産会社をもっと見る（<span class="ListCassette2__toggle__link__emp">全5社</span>）<svg class="svg--openclose--gray ListCassette2__toggle__icon--close" role="img" aria-label="開閉">
+                <use xlink:href="#svg--openclose--gray"></use>
+              </svg>
+      </a>
+    </div>
+  </div><!----></span>
+      </div>
+    </li>
+  
+        
+      </ul>
+    </li>
