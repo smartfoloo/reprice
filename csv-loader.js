@@ -49,9 +49,11 @@ var PREFECTURE_MAP = {
 };
 
 function detectPrefectureFromURL() {
-  var url = window.location.href.toLowerCase();
+  var url = window.location.href;
+  // Handle hokkaido_ style (suumo uses trailing underscore)
+  var urlLower = url.toLowerCase().replace('hokkaido_', 'hokkaido');
   for (var key in PREFECTURE_MAP) {
-    if (url.indexOf(key.toLowerCase()) !== -1) {
+    if (urlLower.indexOf(key.toLowerCase()) !== -1) {
       return PREFECTURE_MAP[key];
     }
   }
@@ -64,7 +66,7 @@ function detectPrefectureFromMeta() {
     var content = metaTags[i].getAttribute('content');
     if (content) {
       for (var key in PREFECTURE_MAP) {
-        if (content.toLowerCase().indexOf(key.toLowerCase()) !== -1) {
+        if (content.indexOf(key) !== -1) {
           return PREFECTURE_MAP[key];
         }
       }
@@ -76,9 +78,37 @@ function detectPrefectureFromMeta() {
 function detectPrefectureFromBreadcrumb() {
   var breadcrumbs = document.querySelectorAll('.breadcrumbs, .breadcrumb, [class*="breadcrumb"]');
   for (var i = 0; i < breadcrumbs.length; i++) {
-    var text = breadcrumbs[i].textContent.toLowerCase();
+    var text = breadcrumbs[i].textContent;
     for (var key in PREFECTURE_MAP) {
-      if (text.indexOf(key.toLowerCase()) !== -1) {
+      if (text.indexOf(key) !== -1) {
+        return PREFECTURE_MAP[key];
+      }
+    }
+  }
+  return null;
+}
+
+// Last-resort: scan property addresses on the page for a prefecture name
+function detectPrefectureFromAddresses() {
+  // Look for text nodes or dd/span containing Japanese addresses
+  var addressSelectors = [
+    '.dottable-vm', // suumo
+    '.ListCassette2__info__dtl', // yahoo
+    '.property-detail-table__block span', // athome
+    'dd', 'td', '.address', '[class*="address"]'
+  ];
+  var textSamples = [];
+  for (var s = 0; s < addressSelectors.length; s++) {
+    var els = document.querySelectorAll(addressSelectors[s]);
+    for (var e = 0; e < els.length && textSamples.length < 50; e++) {
+      textSamples.push(els[e].textContent);
+    }
+  }
+  for (var t = 0; t < textSamples.length; t++) {
+    var text = textSamples[t];
+    for (var key in PREFECTURE_MAP) {
+      if (text.indexOf(key + '県') !== -1 || text.indexOf(key + '都') !== -1 ||
+        text.indexOf(key + '府') !== -1 || text.indexOf(key + '道') !== -1) {
         return PREFECTURE_MAP[key];
       }
     }
@@ -93,45 +123,9 @@ function detectPrefecture() {
   if (pref) return pref;
   pref = detectPrefectureFromBreadcrumb();
   if (pref) return pref;
+  pref = detectPrefectureFromAddresses();
+  if (pref) return pref;
   return 'tokyo';
-}
-
-function decompressGzip(compressedData) {
-  return new Promise(function (resolve, reject) {
-    if (typeof DecompressionStream !== 'undefined') {
-      var stream = new DecompressionStream('gzip');
-      var writer = stream.writable.getWriter();
-      writer.write(compressedData);
-      writer.close();
-
-      var reader = stream.readable.getReader();
-      var chunks = [];
-
-      function read() {
-        reader.read().then(function (result) {
-          if (result.done) {
-            var totalLength = 0;
-            for (var i = 0; i < chunks.length; i++) {
-              totalLength += chunks[i].length;
-            }
-            var combined = new Uint8Array(totalLength);
-            var offset = 0;
-            for (var i = 0; i < chunks.length; i++) {
-              combined.set(chunks[i], offset);
-              offset += chunks[i].length;
-            }
-            resolve(combined);
-            return;
-          }
-          chunks.push(result.value);
-          read();
-        }).catch(reject);
-      }
-      read();
-    } else {
-      reject(new Error('DecompressionStream not supported'));
-    }
-  });
 }
 
 function parseCSVLine(line) {
@@ -159,9 +153,6 @@ function parseCSV(text, COL, propertyType) {
   var result = [];
   var useTypeFilter = propertyType === 'apartment';
 
-  console.log('[CSV Loader] Parsing', propertyType, 'with columns:',
-    Object.keys(COL).join(', '));
-
   for (var i = 1; i < lines.length; i++) {
     var line = lines[i].trim();
     if (!line) continue;
@@ -177,13 +168,10 @@ function parseCSV(text, COL, propertyType) {
     var station = row[COL.STATION] || '';
     var buildYear = row[COL.BUILD_YEAR] || '';
 
-    if (price > 0 && area > 0 && station && buildYear) {
-
-      if (useTypeFilter && (!row[COL.TYPE] ||
-        row[COL.TYPE].indexOf('中古マンション') === -1)) {
+    if (price > 0 && area > 0 && buildYear) {
+      if (useTypeFilter && (!row[COL.TYPE] || row[COL.TYPE].indexOf('中古マンション') === -1)) {
         continue;
       }
-
       result.push(row);
     }
   }
@@ -193,48 +181,26 @@ function parseCSV(text, COL, propertyType) {
 }
 
 function loadPrefectureCSV(prefecture, COL, propertyType, callback) {
-  var dataSubdir = propertyType === 'house' ? 'ci' : 'cm';
-  var csvUrl = chrome.runtime.getURL('data/' + dataSubdir + '/' + prefecture + '.csv.gz');
+  var dataType = propertyType === 'house' ? 'ci' : 'cm';
 
-  console.log('[CSV Loader] Loading', propertyType, 'data for prefecture:', prefecture,
-    'from', csvUrl, 'using COL:', JSON.stringify(Object.keys(COL)));
+  console.log('[CSV Loader] Requesting', propertyType, 'CSV for', prefecture, '(type:', dataType + ')');
 
-  fetch(csvUrl)
-    .then(function (response) {
-      if (!response.ok) {
-        console.warn('[CSV Loader] Gzipped file not found, trying uncompressed');
-        return fetch(chrome.runtime.getURL('data/' + dataSubdir + '/' + prefecture + '.csv'));
+  chrome.runtime.sendMessage(
+    { type: 'loadCSV', prefecture: prefecture, dataType: dataType },
+    function (response) {
+      if (chrome.runtime.lastError) {
+        console.error('[CSV Loader] Message error:', chrome.runtime.lastError.message);
+        callback([]);
+        return;
       }
-      return response;
-    })
-    .then(function (response) {
-      if (!response.ok) {
-        throw new Error('HTTP error ' + response.status);
+      if (!response || response.error) {
+        console.error('[CSV Loader] Background error:', response && response.error);
+        callback([]);
+        return;
       }
-      return response.arrayBuffer();
-    })
-    .then(function (buffer) {
-      var isGzipped = csvUrl.indexOf('.gz') !== -1;
-
-      if (isGzipped) {
-        return decompressGzip(new Uint8Array(buffer));
-      } else {
-        return new Uint8Array(buffer);
-      }
-    })
-    .then(function (decompressedData) {
-      var decoder = new TextDecoder('shift-jis');
-      var text = decoder.decode(decompressedData);
-
-      console.log('[CSV Loader] CSV loaded successfully, size:', text.length);
-
-      var csvData = parseCSV(text, COL, propertyType);
-      console.log('[CSV Loader] Parsed', csvData.length, 'records');
-
+      var csvData = parseCSV(response.text, COL, propertyType);
+      console.log('[CSV Loader] Got', csvData.length, 'records for', prefecture, propertyType);
       callback(csvData);
-    })
-    .catch(function (err) {
-      console.error('[CSV Loader] Failed to load CSV:', err);
-      callback([]);
-    });
+    }
+  );
 }

@@ -6,6 +6,12 @@
   "permissions": [
     "storage"
   ],
+  "host_permissions": [
+    "https://raw.githubusercontent.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [
     {
       "matches": [
@@ -13,8 +19,8 @@
         "*://*.suumo.jp/*"
       ],
       "js": [
-        "content/suumo.js",
-        "csv-loader.js"
+        "csv-loader.js",
+        "content/suumo.js"
       ],
       "css": [
         "style.css"
@@ -25,8 +31,8 @@
         "*://realestate.yahoo.co.jp/*"
       ],
       "js": [
-        "content/yahoo.js",
-        "csv-loader.js"
+        "csv-loader.js",
+        "content/yahoo.js"
       ],
       "css": [
         "style.css"
@@ -38,29 +44,15 @@
         "*://*.athome.co.jp/*"
       ],
       "js": [
-        "content/athome.js",
-        "csv-loader.js"
+        "csv-loader.js",
+        "content/athome.js"
       ],
       "css": [
         "style.css"
       ]
     }
   ],
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "data/*.csv",
-        "data/*.csv.gz"
-      ],
-      "matches": [
-        "*://suumo.jp/*",
-        "*://*.suumo.jp/*",
-        "*://realestate.yahoo.co.jp/*",
-        "*://athome.co.jp/*",
-        "*://*.athome.co.jp/*"
-      ]
-    }
-  ],
+  "web_accessible_resources": [],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
