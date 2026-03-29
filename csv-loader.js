@@ -50,7 +50,6 @@ var PREFECTURE_MAP = {
 
 function detectPrefectureFromURL() {
   var url = window.location.href;
-  // Handle hokkaido_ style (suumo uses trailing underscore)
   var urlLower = url.toLowerCase().replace('hokkaido_', 'hokkaido');
   for (var key in PREFECTURE_MAP) {
     if (urlLower.indexOf(key.toLowerCase()) !== -1) {
@@ -88,13 +87,11 @@ function detectPrefectureFromBreadcrumb() {
   return null;
 }
 
-// Last-resort: scan property addresses on the page for a prefecture name
 function detectPrefectureFromAddresses() {
-  // Look for text nodes or dd/span containing Japanese addresses
   var addressSelectors = [
-    '.dottable-vm', // suumo
-    '.ListCassette2__info__dtl', // yahoo
-    '.property-detail-table__block span', // athome
+    '.dottable-vm',
+    '.ListCassette2__info__dtl',
+    '.property-detail-table__block span',
     'dd', 'td', '.address', '[class*="address"]'
   ];
   var textSamples = [];
@@ -159,12 +156,14 @@ function parseCSV(text, COL, propertyType) {
 
     var row = parseCSVLine(line);
 
-    while (row.length <= Math.max(COL.PRICE, COL.AREA, COL.STATION, COL.BUILD_YEAR)) {
+    var areaColForCheck = COL.LAND_AREA !== undefined ? COL.LAND_AREA : (COL.AREA || 0);
+    while (row.length <= Math.max(COL.PRICE, areaColForCheck, COL.STATION, COL.BUILD_YEAR)) {
       row.push('');
     }
 
     var price = parseInt(row[COL.PRICE] || 0);
-    var area = parseFloat(row[COL.AREA] || 0);
+    var areaIdx = COL.LAND_AREA !== undefined ? COL.LAND_AREA : COL.AREA;
+    var area = parseFloat(row[areaIdx] || 0);
     var station = row[COL.STATION] || '';
     var buildYear = row[COL.BUILD_YEAR] || '';
 
@@ -180,8 +179,27 @@ function parseCSV(text, COL, propertyType) {
   return result;
 }
 
+function removeOutliers(matches) {
+  if (matches.length < 3) return matches;
+  var prices = matches.map(function (m) { return m.tsuboPrice; }).sort(function (a, b) { return a - b; });
+  var mid = Math.floor(prices.length / 2);
+  var median = prices.length % 2 !== 0 ? prices[mid] : (prices[mid - 1] + prices[mid]) / 2;
+  return matches.filter(function (m) {
+    return m.tsuboPrice >= median * 0.8 && m.tsuboPrice <= median * 1.2;
+  });
+}
+
+(function () {
+  var style = document.createElement('style');
+  style.textContent =
+    '@keyframes reprice-spin{to{transform:rotate(360deg)}}' +
+    '.reprice-loading{display:flex;align-items:center;gap:6px;padding:6px 0;color:#999;font-size:12px;}' +
+    '.reprice-loading::before{content:"";display:inline-block;width:12px;height:12px;border:2px solid #ddd;border-top-color:#666;border-radius:50%;animation:reprice-spin 0.8s linear infinite;}';
+  document.head.appendChild(style);
+})();
+
 function loadPrefectureCSV(prefecture, COL, propertyType, callback) {
-  var dataType = propertyType === 'house' ? 'ci' : 'cm';
+  var dataType = propertyType === 'house' ? 'kc' : 'cm';
 
   console.log('[CSV Loader] Requesting', propertyType, 'CSV for', prefecture, '(type:', dataType + ')');
 

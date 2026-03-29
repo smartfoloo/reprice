@@ -11,12 +11,12 @@
 }
 
 .suumo-price-checker .price-checker-result {
-  margin-bottom: 14px;
+  margin: 10px 0px;
 }
 
 .suumo-price-checker .price-checker-detail strong, p {
   display: inline-block !important;
-  min-width: 60px !important;
+  min-width: 72px !important;
 }
 
 .suumo-price-checker .price-checker-detail strong {
@@ -28,13 +28,28 @@
   margin-top: 8px;
 }
 
+.yahoo-price-checker .price-checker-result {
+  margin: 5px 0px;
+}
+
+.yahoo-price-checker .price-checker-detail {
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.yahoo-price-checker .price-checker-detail p {
+  margin-left: 12px;
+  display: inline-block;
+}
+
 /* Athome Price Checker Styles */
 .athome-price-checker {
   font-family: sans-serif;
 }
 
 .athome-price-checker .price-checker-result {
-  margin-bottom: 14px;
+  font-size: 18px;
+  padding-bottom: 8px;
 }
 
 .athome-price-checker .price-checker-detail {
@@ -44,7 +59,7 @@
 
 .athome-price-checker .price-checker-detail strong {
   font-size: 12px !important;
-  min-width: 60px !important;
+  min-width: 72px !important;
   display: inline-block !important;
 }
 
@@ -55,26 +70,10 @@
 
 /* Common Price Checker Result Styles */
 .price-checker-result {
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: 4px;
-  font-weight: bold;
-  margin-right: 8px;
-}
-
-.price-checker-result.expensive {
-  background: #ffe0e0;
-  color: #c00;
-}
-
-.price-checker-result.cheap {
-  background: #e0ffe0;
-  color: #060;
-}
-
-.price-checker-result.fair {
-  background: #e0e0ff;
-  color: #006;
+  color: #f23c56;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 600;
 }
 
 .price-checker-result.nodata {
