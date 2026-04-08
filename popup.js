@@ -46,24 +46,3 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 });
 */
-
-document.addEventListener('DOMContentLoaded', function () {
-  var apartmentToggle = document.getElementById('apartmentToggle');
-  var houseToggle = document.getElementById('houseToggle');
-
-  chrome.storage.sync.get({
-    apartmentEnabled: true,
-    houseEnabled: true
-  }, function (data) {
-    apartmentToggle.checked = data.apartmentEnabled;
-    houseToggle.checked = data.houseEnabled;
-  });
-
-  apartmentToggle.addEventListener('change', function () {
-    chrome.storage.sync.set({ apartmentEnabled: apartmentToggle.checked });
-  });
-
-  houseToggle.addEventListener('change', function () {
-    chrome.storage.sync.set({ houseEnabled: houseToggle.checked });
-  });
-});

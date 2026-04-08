@@ -28,20 +28,8 @@
       line-height: 1.5;
     }
 
-    .toggle-section {
-      margin-bottom: 16px;
-    }
-
-    .toggle-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 0;
-      border-bottom: 1px solid #eee;
-    }
-
-    .toggle-item:last-child {
-      border-bottom: none;
+    .chart-box {
+      margin: 20px 0px;
     }
 
     .section-title {
@@ -51,54 +39,6 @@
       margin-bottom: 8px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-    }
-
-    .toggle-label {
-      font-weight: 500;
-    }
-
-    .toggle-switch {
-      position: relative;
-      width: 44px;
-      height: 24px;
-    }
-
-    .toggle-switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-
-    .toggle-slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #ccc;
-      transition: 0.3s;
-      border-radius: 24px;
-    }
-
-    .toggle-slider:before {
-      position: absolute;
-      content: "";
-      height: 18px;
-      width: 18px;
-      left: 3px;
-      bottom: 3px;
-      background-color: white;
-      transition: 0.3s;
-      border-radius: 50%;
-    }
-
-    input:checked+.toggle-slider {
-      background-color: #0066cc;
-    }
-
-    input:checked+.toggle-slider:before {
-      transform: translateX(20px);
     }
 
     .compatability-chart {
@@ -144,23 +84,6 @@
 <body>
   <h1>Reprice</h1>
   <p>Repriceは、大手不動産ポータルサイトで中古物件の適正価格を表示することができるChrome拡張機能です。</p>
-  <div class="toggle-section">
-    <div class="section-title">物件種別</div>
-    <div class="toggle-item">
-      <span class="toggle-label">中古マンション</span>
-      <label class="toggle-switch">
-        <input type="checkbox" id="apartmentToggle" checked>
-        <span class="toggle-slider"></span>
-      </label>
-    </div>
-    <div class="toggle-item">
-      <span class="toggle-label">中古一戸建て</span>
-      <label class="toggle-switch">
-        <input type="checkbox" id="houseToggle" checked>
-        <span class="toggle-slider"></span>
-      </label>
-    </div>
-  </div>
   <div class="chart-box">
     <div class="section-title">対応状況</div>
     <table class="compatability-chart">
@@ -208,7 +131,6 @@
   </div>
   <p>出典：国土交通省 不動産情報ライブラリ</p>
   <a href="https://www.reinfolib.mlit.go.jp/" target="_blank" rel="noopener noreferrer"><p>https://www.reinfolib.mlit.go.jp/</p></a>
-  <script src="popup.js"></script>
 </body>
 
 </html>

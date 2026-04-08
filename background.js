@@ -1,4 +1,3 @@
-// Service Worker - handles CSV fetching from GitHub with in-memory cache
 
 var csvCache = {};
 
@@ -8,7 +7,7 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
   if (message.type !== 'loadCSV') return false;
 
   var prefecture = message.prefecture;
-  var dataType = message.dataType; // 'cm' (apartment) or 'ci' (house)
+  var dataType = message.dataType;
   var cacheKey = dataType + '_' + prefecture;
 
   if (csvCache[cacheKey]) {
@@ -24,7 +23,6 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
       return res.arrayBuffer();
     })
     .then(function (buffer) {
-      // Try Shift-JIS first (Japanese government data), fall back to UTF-8
       var text;
       try {
         text = new TextDecoder('shift-jis').decode(buffer);
@@ -39,5 +37,5 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
       sendResponse({ error: err.message });
     });
 
-  return true; // async response
+  return true;
 });
