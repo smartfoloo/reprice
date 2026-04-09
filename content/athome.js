@@ -198,14 +198,6 @@ function detectPropertyType() {
   return null;
 }
 
-function checkEnabled(callback) {
-  chrome.storage.sync.get({
-    athomeEnabled: true, apartmentEnabled: true, houseEnabled: true
-  }, function (data) {
-    callback(data.athomeEnabled, data.apartmentEnabled, data.houseEnabled);
-  });
-}
-
 function loadCSV(prefecture, callback) {
   console.log('[Athome] Detected prefecture:', prefecture);
   if (typeof loadPrefectureCSV === 'undefined') {
@@ -213,25 +205,18 @@ function loadCSV(prefecture, callback) {
     callback();
     return;
   }
-  chrome.storage.sync.get({ apartmentEnabled: true, houseEnabled: true }, function (data) {
-    var pendingLoads = 0;
-    if (data.apartmentEnabled) {
-      pendingLoads++;
-      loadPrefectureCSV(prefecture, COL_APARTMENT, 'apartment', function (csv) {
-        csvDataApartment = csv;
-        console.log('[Athome] Apartment CSV:', csvDataApartment.length);
-        if (--pendingLoads === 0) callback();
-      });
-    }
-    if (data.houseEnabled) {
-      pendingLoads++;
-      loadPrefectureCSV(prefecture, COL_HOUSE, 'house', function (csv) {
-        csvDataHouse = csv;
-        console.log('[Athome] House CSV:', csvDataHouse.length);
-        if (--pendingLoads === 0) callback();
-      });
-    }
-    if (pendingLoads === 0) callback();
+
+  var pendingLoads = 2;
+  loadPrefectureCSV(prefecture, COL_APARTMENT, 'apartment', function (csv) {
+    csvDataApartment = csv;
+    console.log('[Athome] Apartment CSV:', csvDataApartment.length);
+    if (--pendingLoads === 0) callback();
+  });
+
+  loadPrefectureCSV(prefecture, COL_HOUSE, 'house', function (csv) {
+    csvDataHouse = csv;
+    console.log('[Athome] House CSV:', csvDataHouse.length);
+    if (--pendingLoads === 0) callback();
   });
 }
 
@@ -354,7 +339,6 @@ function parseAgeFromText(text) {
   return null;
 }
 
-
 function extractPropertyData(card, propType) {
   var data = {
     price: null, landArea: null, buildingArea: null, exclusiveArea: null,
@@ -404,7 +388,6 @@ function extractPropertyData(card, propType) {
   return data;
 }
 
-
 function appendComparison(card, data, reasonablePrice, matchCount, avgTsuboPrice, conditionLabel) {
   if (card.querySelector('.athome-price-checker')) return;
   var detailDiv = card.querySelector('.card-box-inner__detail') || card;
@@ -451,21 +434,18 @@ function appendNoData(card, reason) {
   detailDiv.appendChild(newEl);
 }
 
-
 function processCard(card, propType, csvData, COL, prefecture) {
   if (card.querySelector('.athome-price-checker')) return false;
 
   var data = extractPropertyData(card, propType);
-
   data.address = normalizeAddress(data.address, prefecture);
 
-  var hasArea = propType === 'house' ? (data.landArea || data.buildingArea) : data.exclusiveArea;
+  var baseArea = propType === 'house' ? (data.landArea || data.buildingArea) : data.exclusiveArea;
 
   if (!data.price) { appendNoData(card, '価格取得不可'); return true; }
-  if (!hasArea) { appendNoData(card, '面積取得不可'); return true; }
+  if (!baseArea) { appendNoData(card, '面積取得不可'); return true; }
   if (!data.ageRange) { appendNoData(card, '築年不明'); return true; }
 
-  var baseArea = propType === 'house' ? (data.landArea || data.buildingArea) : data.exclusiveArea;
   var rural = isRuralAddress(data.address);
   var matches, avgTsuboPrice, reasonablePrice;
 
@@ -500,9 +480,6 @@ function processProperties(prefecture) {
   if (csvData.length === 0) return console.log('[Athome] No CSV');
 
   var cards = document.querySelectorAll('athome-csite-pc-part-bukken-card-ryutsu-sell-living');
-  console.log('[Athome] Found', cards.length, propType, 'cards');
-
-  var processed = 0;
   cards.forEach(function (card) {
     var blocks = card.querySelectorAll('.property-detail-table__block');
     if (blocks.length === 0) {
@@ -515,33 +492,24 @@ function processProperties(prefecture) {
       obs.observe(card, { childList: true, subtree: true });
       return;
     }
-    if (processCard(card, propType, csvData, COL, prefecture)) processed++;
+    processCard(card, propType, csvData, COL, prefecture);
   });
-
-  console.log('[Athome] Processed', processed, '/', cards.length);
 }
 
-
 function init() {
-  checkEnabled(function (enabled, apartmentEnabled, houseEnabled) {
-    if (!enabled) return;
-    var propType = detectPropertyType();
-    if (!propType) return;
-    if (propType === 'apartment' && !apartmentEnabled) return;
-    if (propType === 'house' && !houseEnabled) return;
+  var propType = detectPropertyType();
+  if (!propType) return;
 
-    var prefecture = (typeof detectPrefecture === 'function') ? detectPrefecture() : 'tokyo';
+  var prefecture = (typeof detectPrefecture === 'function') ? detectPrefecture() : 'tokyo';
+  var cards = document.querySelectorAll('athome-csite-pc-part-bukken-card-ryutsu-sell-living');
+  cards.forEach(appendLoading);
 
-    var cards = document.querySelectorAll('athome-csite-pc-part-bukken-card-ryutsu-sell-living');
-    cards.forEach(appendLoading);
-
-    loadCSV(prefecture, function () {
-      processProperties(prefecture);
-      var observer = new MutationObserver(function () {
-        setTimeout(function () { processProperties(prefecture); }, 500);
-      });
-      observer.observe(document.body, { childList: true, subtree: true });
+  loadCSV(prefecture, function () {
+    processProperties(prefecture);
+    var observer = new MutationObserver(function () {
+      setTimeout(function () { processProperties(prefecture); }, 500);
     });
+    observer.observe(document.body, { childList: true, subtree: true });
   });
 }
 

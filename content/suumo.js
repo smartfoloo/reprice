@@ -187,14 +187,6 @@ function detectPropertyType() {
   return null;
 }
 
-function checkEnabled(callback) {
-  chrome.storage.sync.get({
-    suumoEnabled: true, apartmentEnabled: true, houseEnabled: true
-  }, function (data) {
-    callback(data.suumoEnabled, data.apartmentEnabled, data.houseEnabled);
-  });
-}
-
 function loadCSV(prefecture, callback) {
   console.log('[SUUMO] Detected prefecture:', prefecture);
   if (typeof loadPrefectureCSV === 'undefined') {
@@ -202,25 +194,18 @@ function loadCSV(prefecture, callback) {
     callback();
     return;
   }
-  chrome.storage.sync.get({ apartmentEnabled: true, houseEnabled: true }, function (settings) {
-    var pending = 0;
-    if (settings.apartmentEnabled) {
-      pending++;
-      loadPrefectureCSV(prefecture, COL_APARTMENT, 'apartment', function (d) {
-        csvDataApartment = d;
-        console.log('[SUUMO] Apartment CSV:', csvDataApartment.length);
-        if (--pending === 0) callback();
-      });
-    }
-    if (settings.houseEnabled) {
-      pending++;
-      loadPrefectureCSV(prefecture, COL_HOUSE, 'house', function (d) {
-        csvDataHouse = d;
-        console.log('[SUUMO] House CSV:', csvDataHouse.length);
-        if (--pending === 0) callback();
-      });
-    }
-    if (pending === 0) callback();
+
+  var pending = 2; // Loading both apartment and house data
+  loadPrefectureCSV(prefecture, COL_APARTMENT, 'apartment', function (d) {
+    csvDataApartment = d;
+    console.log('[SUUMO] Apartment CSV:', csvDataApartment.length);
+    if (--pending === 0) callback();
+  });
+
+  loadPrefectureCSV(prefecture, COL_HOUSE, 'house', function (d) {
+    csvDataHouse = d;
+    console.log('[SUUMO] House CSV:', csvDataHouse.length);
+    if (--pending === 0) callback();
   });
 }
 
@@ -500,25 +485,20 @@ function processProperties() {
 
 
 function init() {
-  checkEnabled(function (enabled, apartmentEnabled, houseEnabled) {
-    if (!enabled) return;
-    var propType = detectPropertyType();
-    if (!propType) return;
-    if (propType === 'apartment' && !apartmentEnabled) return;
-    if (propType === 'house' && !houseEnabled) return;
+  var propType = detectPropertyType();
+  if (!propType) return;
 
-    var units = document.querySelectorAll('.property_unit');
-    units.forEach(appendLoading);
+  var units = document.querySelectorAll('.property_unit');
+  units.forEach(appendLoading);
 
-    var prefecture = (typeof detectPrefecture === 'function') ? detectPrefecture() : 'tokyo';
+  var prefecture = (typeof detectPrefecture === 'function') ? detectPrefecture() : 'tokyo';
 
-    loadCSV(prefecture, function () {
-      processProperties();
-      var observer = new MutationObserver(function () {
-        setTimeout(processProperties, 500);
-      });
-      observer.observe(document.body, { childList: true, subtree: true });
+  loadCSV(prefecture, function () {
+    processProperties();
+    var observer = new MutationObserver(function () {
+      setTimeout(processProperties, 500);
     });
+    observer.observe(document.body, { childList: true, subtree: true });
   });
 }
 
