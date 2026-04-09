@@ -199,7 +199,7 @@ function removeOutliers(matches) {
 })();
 
 function loadPrefectureCSV(prefecture, COL, propertyType, callback) {
-  var dataType = propertyType === 'house' ? 'kc' : 'cm';
+  var dataType = propertyType === 'house' ? 'ci' : 'cm';
 
   console.log('[CSV Loader] Requesting', propertyType, 'CSV for', prefecture, '(type:', dataType + ')');
 

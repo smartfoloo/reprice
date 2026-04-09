@@ -10,19 +10,11 @@ var COL_HOUSE = {
 };
 
 var COL_APARTMENT = {
-  TYPE: 0,
-  LOCATION: 5,
-  STATION: 6,
-  WALK_TIME: 7,
-  PRICE: 8,
-  LAYOUT: 9,
-  AREA: 10,
-  BUILD_YEAR: 11,
-  STRUCTURE: 12,
-  TRADE_PERIOD: 18
+  TYPE: 0, LOCATION: 5, STATION: 6, WALK_TIME: 7, PRICE: 8, LAYOUT: 9, AREA: 10,
+  BUILD_YEAR: 11, STRUCTURE: 12, TRADE_PERIOD: 18
 };
 
-const rankedCitiesByDensity = [
+var rankedCitiesByDensity = [
   { rank: 1, prefecture: "埼玉県", city: "蕨市", population_density: 14835.81 },
   { rank: 2, prefecture: "東京都", city: "武蔵野市", population_density: 13723.41 },
   { rank: 3, prefecture: "東京都", city: "西東京市", population_density: 13228.76 },
@@ -171,7 +163,6 @@ var TOKYO_23_WARDS = [
 
 function isTokyoWard(address) {
   if (!address) return false;
-  if (address.indexOf('東京都') === -1) return false;
   for (var i = 0; i < TOKYO_23_WARDS.length; i++) {
     if (address.indexOf(TOKYO_23_WARDS[i]) !== -1) return true;
   }
@@ -198,9 +189,7 @@ function detectPropertyType() {
 
 function checkEnabled(callback) {
   chrome.storage.sync.get({
-    suumoEnabled: true,
-    apartmentEnabled: true,
-    houseEnabled: true
+    suumoEnabled: true, apartmentEnabled: true, houseEnabled: true
   }, function (data) {
     callback(data.suumoEnabled, data.apartmentEnabled, data.houseEnabled);
   });
@@ -208,34 +197,29 @@ function checkEnabled(callback) {
 
 function loadCSV(prefecture, callback) {
   console.log('[SUUMO] Detected prefecture:', prefecture);
-
   if (typeof loadPrefectureCSV === 'undefined') {
     console.log('[SUUMO] CSV loader not found');
     callback();
     return;
   }
-
   chrome.storage.sync.get({ apartmentEnabled: true, houseEnabled: true }, function (settings) {
     var pending = 0;
-
     if (settings.apartmentEnabled) {
       pending++;
       loadPrefectureCSV(prefecture, COL_APARTMENT, 'apartment', function (d) {
         csvDataApartment = d;
-        console.log('[SUUMO] Apartment CSV:', csvDataApartment.length, 'records');
+        console.log('[SUUMO] Apartment CSV:', csvDataApartment.length);
         if (--pending === 0) callback();
       });
     }
-
     if (settings.houseEnabled) {
       pending++;
       loadPrefectureCSV(prefecture, COL_HOUSE, 'house', function (d) {
         csvDataHouse = d;
-        console.log('[SUUMO] House CSV:', csvDataHouse.length, 'records');
+        console.log('[SUUMO] House CSV:', csvDataHouse.length);
         if (--pending === 0) callback();
       });
     }
-
     if (pending === 0) callback();
   });
 }
@@ -243,8 +227,7 @@ function loadCSV(prefecture, callback) {
 function parseBuildYear(text) {
   if (!text) return null;
   var match = text.match(/(\d{4})年/);
-  if (match) return parseInt(match[1]);
-  return null;
+  return match ? parseInt(match[1]) : null;
 }
 
 function getAgeRange(age) {
@@ -261,35 +244,39 @@ function normalizeStation(name) {
   return name.replace(/\(.*?\)/g, '').replace(/（.*?）/g, '').replace(/駅$/, '').trim();
 }
 
+function removeOutliers(matches) {
+  if (matches.length < 4) return matches;
+  var prices = matches.map(function (m) { return m.tsuboPrice; }).sort(function (a, b) { return a - b; });
+  var q1 = prices[Math.floor(prices.length * 0.25)];
+  var q3 = prices[Math.floor(prices.length * 0.75)];
+  var iqr = q3 - q1;
+  var lower = q1 - 1.5 * iqr;
+  var upper = q3 + 1.5 * iqr;
+  return matches.filter(function (m) { return m.tsuboPrice >= lower && m.tsuboPrice <= upper; });
+}
+
 function findMatchingByStation(stationName, ageRange, csvData, COL) {
-  COL = COL || COL_APARTMENT;
   var normalizedTarget = normalizeStation(stationName);
   if (!normalizedTarget) return [];
   var areaIdx = COL.LAND_AREA !== undefined ? COL.LAND_AREA : COL.AREA;
-
   var matches = [];
   for (var i = 0; i < csvData.length; i++) {
     var row = csvData[i];
     if (normalizeStation(row[COL.STATION]) !== normalizedTarget) continue;
     if (COL.PURPOSE !== undefined && (row[COL.PURPOSE] || '').indexOf('住宅') === -1) continue;
-
     var buildYear = parseBuildYear(row[COL.BUILD_YEAR]);
     if (!buildYear || getAgeRange(NOW - buildYear) !== ageRange) continue;
-
     var price = parseInt(row[COL.PRICE]);
     var area = parseFloat(row[areaIdx]);
     if (!price || !area || area <= 0) continue;
-
     matches.push({ price: price, area: area, tsuboPrice: price / (area / TSUBO) });
   }
   return matches;
 }
 
 function findMatchingByLocation(locationName, ageRange, csvData, COL) {
-  COL = COL || COL_APARTMENT;
   if (!locationName) return [];
   var areaIdx = COL.LAND_AREA !== undefined ? COL.LAND_AREA : COL.AREA;
-
   var matches = [];
   for (var i = 0; i < csvData.length; i++) {
     var row = csvData[i];
@@ -297,14 +284,11 @@ function findMatchingByLocation(locationName, ageRange, csvData, COL) {
     if (!csvLocation) continue;
     if (csvLocation.indexOf(locationName) === -1 && locationName.indexOf(csvLocation) === -1) continue;
     if (COL.PURPOSE !== undefined && (row[COL.PURPOSE] || '').indexOf('住宅') === -1) continue;
-
     var buildYear = parseBuildYear(row[COL.BUILD_YEAR]);
     if (!buildYear || getAgeRange(NOW - buildYear) !== ageRange) continue;
-
     var price = parseInt(row[COL.PRICE]);
     var area = parseFloat(row[areaIdx]);
     if (!price || !area || area <= 0) continue;
-
     matches.push({ price: price, area: area, tsuboPrice: price / (area / TSUBO) });
   }
   return matches;
@@ -334,100 +318,75 @@ function parsePrice(text) {
   var manMatch = text.match(/(\d+)万/);
   var oku = okuMatch ? parseInt(okuMatch[1]) * 10000 : 0;
   var man = manMatch ? parseInt(manMatch[1]) : 0;
+  if (oku === 0 && man === 0) return null;
   return (oku + man) * 10000;
 }
 
 function parseArea(text) {
   if (!text) return null;
-  var match = text.match(/([\d.]+)m/);
+  var match = text.match(/([\d.]+)\s*m/);
   return match ? parseFloat(match[1]) : null;
 }
 
-function extractStationName(unit) {
-  var lines = unit.querySelectorAll('.dottable-line');
-  for (var i = 0; i < lines.length; i++) {
-    var dts = lines[i].querySelectorAll('dt');
-    var dds = lines[i].querySelectorAll('dd');
-    for (var j = 0; j < dts.length; j++) {
-      var label = dts[j].textContent.trim();
-      if (label.indexOf('沿線') !== -1 || label.indexOf('駅') !== -1) {
-        var dd = dds[j];
-        if (dd) {
-          var text = dd.textContent.trim();
-          var stationMatch = text.match(/「([^」]+)」|([^\s「」／]+)駅/);
-          if (stationMatch) return stationMatch[1] || stationMatch[2];
-        }
-      }
-    }
-  }
-  return null;
-}
 
-function extractAddress(unit) {
-  var lines = unit.querySelectorAll('.dottable-line');
-  for (var i = 0; i < lines.length; i++) {
-    var dts = lines[i].querySelectorAll('dt');
-    var dds = lines[i].querySelectorAll('dd');
-    for (var j = 0; j < dts.length; j++) {
-      var label = dts[j].textContent.trim();
-      if (label.indexOf('所在地') !== -1) {
-        var dd = dds[j];
-        if (dd) return dd.textContent.trim();
-      }
+function extractDottableData(unit) {
+  var result = {};
+  var dts = unit.querySelectorAll('dt');
+  dts.forEach(function (dt) {
+    var label = dt.textContent.trim();
+    var dd = dt.nextElementSibling;
+    if (dd && dd.tagName === 'DD') {
+      result[label] = dd.textContent.trim();
     }
-  }
-  return null;
+  });
+  return result;
 }
 
 function extractPropertyData(unit) {
   var data = {
-    price: null, area: null, landArea: null, age: null, station: null,
-    address: null, ageRange: null, tsuboPrice: null
+    price: null,
+    exclusiveArea: null,
+    landArea: null,
+    buildingArea: null,
+    age: null,
+    ageRange: null,
+    station: null,
+    address: null
   };
 
-  data.station = extractStationName(unit);
-  data.address = extractAddress(unit);
+  var lv = extractDottableData(unit);
 
-  var lines = unit.querySelectorAll('.dottable-line');
-  for (var i = 0; i < lines.length; i++) {
-    var line = lines[i];
-    var dts = line.querySelectorAll('dt');
-    var dds = line.querySelectorAll('dd');
+  var priceSpan = unit.querySelector('.dottable-value');
+  if (priceSpan) {
+    data.price = parsePrice(priceSpan.textContent);
+  } else {
+    data.price = parsePrice(lv['販売価格'] || lv['価格'] || '');
+  }
 
-    for (var j = 0; j < dts.length; j++) {
-      var label = dts[j].textContent.trim();
-      var dd = dds[j];
-      if (!dd) continue;
-      var value = dd.textContent.trim();
+  if (lv['専有面積']) data.exclusiveArea = parseArea(lv['専有面積']);
+  if (lv['土地面積']) data.landArea = parseArea(lv['土地面積']);
+  if (lv['建物面積']) data.buildingArea = parseArea(lv['建物面積']);
 
-      if (label.indexOf('販売価格') !== -1 || label.indexOf('価格') !== -1) {
-        data.price = parsePrice(value);
-      }
-      if (label.indexOf('専有面積') !== -1) {
-        data.area = parseArea(value);
-      }
-      if (label.indexOf('土地面積') !== -1) {
-        data.landArea = parseArea(value);
-      }
-      if (label.indexOf('建物面積') !== -1 && !data.landArea) {
-        data.area = parseArea(value);
-      }
-      if (label.indexOf('築年月') !== -1 || label.indexOf('築年') !== -1) {
-        var yearMatch = value.match(/(\d{4})年/);
-        if (yearMatch) {
-          data.age = NOW - parseInt(yearMatch[1]);
-          data.ageRange = getAgeRange(data.age);
-        }
-      }
+  var buildText = lv['築年月'] || lv['築年'] || '';
+  if (buildText) {
+    var yearMatch = buildText.match(/(\d{4})年/);
+    if (yearMatch) {
+      data.age = NOW - parseInt(yearMatch[1]);
+      data.ageRange = getAgeRange(data.age);
     }
   }
 
-  if (data.price && data.area && data.area > 0) {
-    data.tsuboPrice = Math.round(data.price / (data.area / TSUBO));
+  data.address = lv['所在地'] || null;
+
+  var trafficText = lv['沿線・駅'] || lv['交通'] || lv['アクセス'] || '';
+  if (trafficText) {
+    var sm = trafficText.match(/「([^」]+)」/) || trafficText.match(/([^\s「」／\n]{1,10})駅/);
+    if (sm) data.station = normalizeStation(sm[1]);
   }
 
   return data;
 }
+
 
 function appendComparison(unit, data, reasonablePrice, matchCount, avgTsuboPrice, conditionLabel) {
   if (unit.querySelector('.suumo-price-checker')) return;
@@ -442,7 +401,8 @@ function appendComparison(unit, data, reasonablePrice, matchCount, avgTsuboPrice
 
   var newLine = document.createElement('div');
   newLine.className = 'dottable-line suumo-price-checker';
-  newLine.innerHTML = '<dl><dd class="dottable-vm">' +
+  newLine.innerHTML =
+    '<dl><dd class="dottable-vm">' +
     '<div class="price-checker-details">' +
     '<div class="price-checker-detail"><strong>相場価格との差額</strong></div>' +
     '<p class="price-checker-result" style="color:' + diffColor + ';">' + diffSign + yen(Math.abs(diff)) + '</p>' +
@@ -468,14 +428,54 @@ function appendNoData(unit, reason) {
   if (!dottable) return;
   var loadingEl = dottable.querySelector('.reprice-loading');
   if (loadingEl) loadingEl.remove();
-
   var newLine = document.createElement('div');
   newLine.className = 'dottable-line suumo-price-checker';
-  newLine.innerHTML = '<dl><dd class="dottable-vm">' +
+  newLine.innerHTML =
+    '<dl><dd class="dottable-vm">' +
     '<span class="price-checker-result nodata">' + reason + '</span>' +
     '</dd></dl>';
-
   dottable.appendChild(newLine);
+}
+
+
+function processUnit(unit, propType, csvData, COL) {
+  if (unit.querySelector('.suumo-price-checker')) return false;
+
+  var data = extractPropertyData(unit);
+
+  var baseArea;
+  if (propType === 'house') {
+    baseArea = data.landArea || data.buildingArea;
+  } else {
+    baseArea = data.exclusiveArea;
+  }
+
+  if (!data.price) { appendNoData(unit, '価格取得不可'); return true; }
+  if (!baseArea) { appendNoData(unit, '面積取得不可'); return true; }
+  if (!data.ageRange) { appendNoData(unit, '築年不明'); return true; }
+
+  var matches, avgTsuboPrice, reasonablePrice;
+
+  if (isRuralAddress(data.address)) {
+    var locationName = extractLocationFromAddress(data.address);
+    if (!locationName) { appendNoData(unit, '地区名不明'); return true; }
+    matches = findMatchingByLocation(locationName, data.ageRange, csvData, COL);
+    if (propType === 'house') matches = removeOutliers(matches);
+    if (matches.length === 0) { appendNoData(unit, locationName + '・築' + data.ageRange + '年データなし'); return true; }
+    avgTsuboPrice = calculateAverageTsuboPrice(matches);
+    reasonablePrice = Math.round(avgTsuboPrice * (baseArea / TSUBO));
+    appendComparison(unit, data, reasonablePrice, matches.length, avgTsuboPrice, locationName + '地区');
+  } else {
+    if (!data.station) { appendNoData(unit, '駅不明'); return true; }
+    matches = findMatchingByStation(data.station, data.ageRange, csvData, COL);
+    if (propType === 'house') matches = removeOutliers(matches);
+    if (matches.length === 0) { appendNoData(unit, data.station + '駅・築' + data.ageRange + '年データなし'); return true; }
+    avgTsuboPrice = calculateAverageTsuboPrice(matches);
+    reasonablePrice = Math.round(avgTsuboPrice * (baseArea / TSUBO));
+    appendComparison(unit, data, reasonablePrice, matches.length, avgTsuboPrice, data.station + '駅');
+  }
+
+  return true;
 }
 
 function processProperties() {
@@ -483,53 +483,21 @@ function processProperties() {
   if (!propType) return console.log('[SUUMO] Unknown property type');
 
   var csvData = propType === 'house' ? csvDataHouse : csvDataApartment;
-  if (csvData.length === 0) {
-    console.log('[SUUMO] No CSV data for', propType);
-    return;
-  }
+  var COL = propType === 'house' ? COL_HOUSE : COL_APARTMENT;
+
+  if (csvData.length === 0) return console.log('[SUUMO] No CSV data for', propType);
 
   var units = document.querySelectorAll('.property_unit');
-  console.log('[SUUMO] Found', units.length, 'apartment units');
+  console.log('[SUUMO] Found', units.length, propType, 'units');
 
   var processed = 0;
-  units.forEach(function (unit, index) {
-    var data = extractPropertyData(unit);
-
-    if (!data.price || !data.area) return;
-
-    if (!data.ageRange) {
-      appendNoData(unit, '築年不明');
-      return;
-    }
-
-    var COL = propType === 'house' ? COL_HOUSE : COL_APARTMENT;
-    var baseArea = propType === 'house' ? (data.landArea || data.area) : data.area;
-    if (!baseArea) return;
-
-    if (isRuralAddress(data.address)) {
-      var locationName = extractLocationFromAddress(data.address);
-      if (!locationName) { appendNoData(unit, '地区名不明'); return; }
-      var matches = findMatchingByLocation(locationName, data.ageRange, csvData, COL);
-      if (propType === 'house') matches = removeOutliers(matches);
-      if (matches.length === 0) { appendNoData(unit, locationName + '・築' + data.ageRange + '年データなし'); return; }
-      var avgTsuboPrice = calculateAverageTsuboPrice(matches);
-      var reasonablePrice = Math.round(avgTsuboPrice * (baseArea / TSUBO));
-      appendComparison(unit, data, reasonablePrice, matches.length, avgTsuboPrice, locationName + '地区');
-    } else {
-      if (!data.station) { appendNoData(unit, '駅不明'); return; }
-      var matches = findMatchingByStation(data.station, data.ageRange, csvData, COL);
-      if (propType === 'house') matches = removeOutliers(matches);
-      if (matches.length === 0) { appendNoData(unit, data.station + '駅・築' + data.ageRange + '年データなし'); return; }
-      var avgTsuboPrice = calculateAverageTsuboPrice(matches);
-      var reasonablePrice = Math.round(avgTsuboPrice * (baseArea / TSUBO));
-      appendComparison(unit, data, reasonablePrice, matches.length, avgTsuboPrice, data.station + '駅');
-    }
-
-    processed++;
+  units.forEach(function (unit) {
+    if (processUnit(unit, propType, csvData, COL)) processed++;
   });
 
   console.log('[SUUMO] Processed', processed, '/', units.length);
 }
+
 
 function init() {
   checkEnabled(function (enabled, apartmentEnabled, houseEnabled) {
@@ -546,7 +514,6 @@ function init() {
 
     loadCSV(prefecture, function () {
       processProperties();
-
       var observer = new MutationObserver(function () {
         setTimeout(processProperties, 500);
       });

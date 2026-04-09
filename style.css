@@ -77,8 +77,7 @@
 }
 
 .price-checker-result.nodata {
-  background: #f0f0f0;
-  color: #666;
+  font-size: 14px;
 }
 
 .price-checker-diff {
