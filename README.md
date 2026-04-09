@@ -1,3 +1,7 @@
+<kbd>
+<img height="75px" src="icons/icon128.png">
+</kbd>
+
 # Reprice
 
 Repriceは、大手不動産ポータルサイトで中古物件の相場価格を表示することができるChrome拡張機能です。
