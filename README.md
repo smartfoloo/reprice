@@ -1,6 +1,4 @@
-<kbd>
 <img height="75px" src="icons/icon128.png">
-</kbd>
 
 # Reprice
 
