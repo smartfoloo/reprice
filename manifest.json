@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Reprice",
   "version": "1.0",
-  "description": "Repriceは、大手不動産ポータルサイトで中古マンションの適正価格を表示することができるChrome拡張機能です。",
+  "description": "Repriceは大手不動産ポータルサイトで中古物件の相場価格を表示することができるChrome拡張機能です。",
   "permissions": [],
   "host_permissions": [
     "https://raw.githubusercontent.com/*"
